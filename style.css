@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Playfair+Display:900|Open+Sans');
+
+body {
+    background: #e9e9e9;
+    background-image: url('image/background.jpg');
+    background-size: cover;
+    padding: 100px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 300px auto;
+    background-repeat: no-repeat;
+}
+
+body:after {
+    content: "forbesarnel09@gmail.com";
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: #919191;
+    font-size: 10pt;
+}
+
+h1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color: rgb(104, 85, 57);
+    font-size: 48pt;
+    font-family: 'Playfair Display', sans-serif;
+  
+    background-image: linear-gradient(120deg, rgb(30,77,53) 0%, rgb(245, 233, 149) 50%, rgb(28, 33, 104) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 100%;
+    transition: background-size 0.25s ease-in;        
+}
+
+#links {
+    list-style-type: disc;
+    grid-row-start: 2;
+    grid-column-start: 2;	
+    font-size: 14pt;
+} 
+
+#links:before {
+    content: 'Quick links';
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(28, 33, 104);
+    background-color: rgba(245, 233, 149, 0.5);
+    font-size: 18pt;
+	margin-left: -25px;
+}
+
+#proposal {
+    list-style-type: disc;
+    grid-row-start: 3;
+    grid-column-start: 2;	
+    font-size: 14pt;
+} 
+
+#proposal:before {
+    content: 'Proposal';
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(28, 33, 104);
+    background-color: rgba(245, 233, 149, 0.5);
+    font-size: 18pt;
+	margin-left: -25px;
+}
+
+li {
+    padding-top: 10px;
+}
+
+a {
+    color: rgb(28, 33, 104);
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+  }
+  a:after {
+    background: linear-gradient(to bottom, rgb(245, 233, 149), rgb(245, 233, 149)) center 1.08em/100% 2px no-repeat;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 400%;
+    will-change: transform;
+    z-index: -1;
+  }
+  a:hover:after {
+    -webkit-animation: underline-gradient 6s linear infinite;
+            animation: underline-gradient 6s linear infinite;
+    background-image: linear-gradient(90deg, rgba(122, 95, 255, 0.8) 15%, rgba(1, 255, 137, 0.6) 35%, rgba(122, 95, 255, 0.8) 85%);
+  }
+  
+  #archilogo {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 50px;
+	padding: 10px;
+	background-color: white;
+}	
+
+#fitlogo {
+	position: absolute;
+	left: 80em;
+	top: 4em;	
+    width: 360px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	opacity: 0.7;
+	transform: rotate(-10deg);	
+}
+
+#ishinlogo {
+	position: absolute;
+	left: 80.2em;
+	top: 14.3em;
+	width: 360px;
+    border-radius: 5px;
+	border: 1px solid gray;
+	opacity: 0.7;
+	transform: rotate(10deg);	
+}
+
+#nexthouselogo {
+	position: absolute;
+	left: 80.3em;
+	top: 22em;
+	width: 360px;
+    border-radius: 5px;
+	border: 1px solid gray;
+	opacity: 0.7;
+	transform: rotate(-10deg);	
+}
+
+#actielogo {
+	position: absolute;
+	left: 80em;
+	top: 30.5em;
+	width: 360px;
+	height: 120px;
+    border-radius: 5px;
+	border: 1px solid gray;
+	opacity: 0.7;
+	transform: rotate(10deg);	
+}
+
+  
+  @-webkit-keyframes underline-gradient {
+    0% {
+      -webkit-transform: translate3d(0%, 0%, 0);
+              transform: translate3d(0%, 0%, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(-75%, 0%, 0);
+              transform: translate3d(-75%, 0%, 0);
+    }
+  }
+  
+  @keyframes underline-gradient {
+    0% {
+      -webkit-transform: translate3d(0%, 0%, 0);
+              transform: translate3d(0%, 0%, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(-75%, 0%, 0);
+              transform: translate3d(-75%, 0%, 0);
+    }
+  }
