@@ -27,7 +27,7 @@ body:after {
 h1 {
     grid-row-start: 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 10;
     color: rgb(104, 85, 57);
     font-size: 48pt;
     font-family: 'Playfair Display', sans-serif;
@@ -44,6 +44,7 @@ h1 {
     grid-row-start: 2;
     grid-column-start: 2;	
     font-size: 14pt;
+	align-self: start;
 } 
 
 #links:before {
@@ -60,10 +61,28 @@ h1 {
     grid-row-start: 3;
     grid-column-start: 2;	
     font-size: 14pt;
+	align-self: start;
 } 
 
 #proposal:before {
     content: 'Proposal';
+    font-family: 'Permanent Marker', cursive;
+    color: rgb(28, 33, 104);
+    background-color: rgba(245, 233, 149, 0.5);
+    font-size: 18pt;
+	margin-left: -25px;
+}
+
+#workGuide {
+    list-style-type: disc;
+    grid-row-start: 2;
+    grid-column-start: 3;	
+    font-size: 14pt;
+	align-self: start;
+} 
+
+#workGuide:before {
+    content: 'Work Guide (Basic)';
     font-family: 'Permanent Marker', cursive;
     color: rgb(28, 33, 104);
     background-color: rgba(245, 233, 149, 0.5);
