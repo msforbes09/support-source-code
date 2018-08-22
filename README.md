@@ -1,4 +1,4 @@
-![screen shot](\images\support.png)
+![screen shot](\image\support.png)
 
 ## Shortcut Tools
 
