@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sample MasterList</title>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<div class="container-fluid">
+		<h2 style="margin-left: 100px;">Revision Department</h2>
+		<hr />
+		<table class="table table-bordered table-hover table-striped" style="margin:auto; width: 80%;">
+			<thead class="bg-primary">
+				<tr>
+					<th style="width: 5%;">No.</th>
+					<th>Name</th>
+					<th style="width: 30%;">Position</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1.</td>
+					<td>Staff 1</td>
+					<td>Leader</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td id="showinfo">Quimson, Joshua</td>
+					<td>Sub Leader</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>Staff 3</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>Staff 4</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>Staff 5</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>Staff 6</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>7.</td>
+					<td>Staff 7</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>8.</td>
+					<td>Staff 8</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>9.</td>
+					<td>Staff 9</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>10.</td>
+					<td>Staff 10</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>11.</td>
+					<td>Staff 11</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>12.</td>
+					<td>Staff 12</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>13.</td>
+					<td>Staff 13</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>14.</td>
+					<td>Staff 14</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>15.</td>
+					<td>Staff 15</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>16.</td>
+					<td>Staff 16</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>17.</td>
+					<td>Staff 17</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>18.</td>
+					<td>Staff 18</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>19.</td>
+					<td>Staff 19</td>
+					<td>Cad Engineer</td>
+				</tr>
+				<tr>
+					<td>20.</td>
+					<td>Staff 20</td>
+					<td>Cad Engineer</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+	</div>
+	
+<div class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-info">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Detailed Information</h4>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<img id="infoImg" src="../image/joshua.jpg" alt="Image of Joshua"/>
+					<div id="infoContent">
+						<legend>Personal Information</legend>
+						<h4><small>First Name:</small> Joshua</h4>
+						<h4><small>Middle Name:</small> Bruno</h4>
+						<h4><small>Last Name:</small> Quimson</h4>
+						<h4><small>Birthdate:</small> March 30, 1987</h4>
+						<h4><small>Date Hired:</small> June 27, 2016</h4>
+						<h4><small>Position:</small> Sub-Leader</h4>
+						<!--
+						<br/>
+						<legend>Contact Information</legend>
+						<h4><small>Contact No.:</small> 0936-657-818</h4>
+						<h4><small>E-mail address:</small> escasinasjessel@yahoo.com</h4>
+						<h4><small>Present Address:</small> D-Camerino st. Brgy. Luciano, Trece Martires City</h4>
+						<br/>
+						<legend>Performance this Month</legend>
+						<h4><small>Finished Plans:</small> count/s</h4>
+						<h4><small>Recorded Mistakes:</small> count/s</h4>
+						-->
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script>
+	
+	$(function(){
+		$(document).on('click','#showinfo',function(){
+			$(".modal").modal("show");
+		})
+		$("#showinfo").popover({
+			title: "Tips",
+			placement: "left",
+			content: "Click this to view detailed info.",
+			container: "body"
+		})
+		$("#showinfo").popover("show")
+		
+	})
+	
+	</script>
+  </body>
+</html>
