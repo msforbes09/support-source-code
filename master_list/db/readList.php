@@ -20,7 +20,7 @@ try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	$stmt = $pdo->prepare("
-		SELECT s.staffId, s.idNum, concat(s.firstName, ' ', s.lastName) as fullName, s.nickName, e.statDesc, j.jobName, t.teamName 
+		SELECT s.staffId, s.idNum, concat(s.firstName, ' ', s.lastName) as fullName, s.nickName,  e.statDesc, j.jobName, t.teamName 
 		FROM
 		staff s
 		JOIN empstatus e
