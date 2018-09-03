@@ -1,0 +1,203 @@
+[1mdiff --git a/fitEvent/index.html b/fitEvent/index.html[m
+[1mindex 3411676..4683879 100644[m
+[1m--- a/fitEvent/index.html[m
+[1m+++ b/fitEvent/index.html[m
+[36m@@ -37,19 +37,19 @@[m
+ 			<!-- Wrapper for slides -->[m
+ 			<div class="carousel-inner" role="listbox" style="max-height: 700px">[m
+ 				<div class="item active">[m
+[31m-					<img src="../image/slide1-1.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide1-1.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide1-2.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide1-2.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide1-3.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide1-3.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide1-4.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide1-4.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide1-5.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide1-5.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 			</div>[m
+ [m
+[36m@@ -79,19 +79,19 @@[m
+ 			<!-- Wrapper for slides -->[m
+ 			<div class="carousel-inner" role="listbox" style="max-height: 700px">[m
+ 				<div class="item active">[m
+[31m-					<img src="../image/slide2-1.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide2-1.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide2-2.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide2-2.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide2-3.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide2-3.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide2-4.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide2-4.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide2-5.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide2-5.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 			</div>[m
+ [m
+[36m@@ -121,19 +121,19 @@[m
+ 			<!-- Wrapper for slides -->[m
+ 			<div class="carousel-inner" role="listbox" style="max-height: 700px">[m
+ 				<div class="item active">[m
+[31m-					<img src="../image/slide3-1.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide3-1.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide3-2.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide3-2.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide3-3.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide3-3.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide3-4.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide3-4.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide3-5.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide3-5.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 			</div>[m
+ [m
+[36m@@ -163,19 +163,19 @@[m
+ 			<!-- Wrapper for slides -->[m
+ 			<div class="carousel-inner" role="listbox" style="max-height: 700px">[m
+ 				<div class="item active">[m
+[31m-					<img src="../image/slide4-1.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide4-1.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide4-2.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide4-2.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide4-3.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide4-3.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide4-4.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide4-4.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 				<div class="item">[m
+[31m-					<img src="../image/slide4-5.jpg" alt="...">[m
+[32m+[m					[32m<img src="../image/fitEvent/slide4-5.jpg" alt="...">[m[41m[m
+ 				</div>[m
+ 			</div>[m
+ [m
+[1mdiff --git a/image/joshua.jpg b/image/joshua.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex b506ee4..0000000[m
+Binary files a/image/joshua.jpg and /dev/null differ
+[1mdiff --git a/image/slide1-1.jpg b/image/slide1-1.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 83646d0..0000000[m
+Binary files a/image/slide1-1.jpg and /dev/null differ
+[1mdiff --git a/image/slide1-2.jpg b/image/slide1-2.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex e34c113..0000000[m
+Binary files a/image/slide1-2.jpg and /dev/null differ
+[1mdiff --git a/image/slide1-3.jpg b/image/slide1-3.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 4cf6aee..0000000[m
+Binary files a/image/slide1-3.jpg and /dev/null differ
+[1mdiff --git a/image/slide1-4.jpg b/image/slide1-4.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex a2b409a..0000000[m
+Binary files a/image/slide1-4.jpg and /dev/null differ
+[1mdiff --git a/image/slide1-5.jpg b/image/slide1-5.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex bd918af..0000000[m
+Binary files a/image/slide1-5.jpg and /dev/null differ
+[1mdiff --git a/image/slide2-1.jpg b/image/slide2-1.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 35ea217..0000000[m
+Binary files a/image/slide2-1.jpg and /dev/null differ
+[1mdiff --git a/image/slide2-2.jpg b/image/slide2-2.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 0084f4f..0000000[m
+Binary files a/image/slide2-2.jpg and /dev/null differ
+[1mdiff --git a/image/slide2-3.jpg b/image/slide2-3.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 71b7a21..0000000[m
+Binary files a/image/slide2-3.jpg and /dev/null differ
+[1mdiff --git a/image/slide2-4.jpg b/image/slide2-4.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 9b636b7..0000000[m
+Binary files a/image/slide2-4.jpg and /dev/null differ
+[1mdiff --git a/image/slide2-5.jpg b/image/slide2-5.jpg[m
+[1mdeleted file mode 100644[m
+[1mindex 0c9a13f..0000000[m
+Binary files a/image/slide2-5.jpg and /dev/null differ
+[1mdiff --git a/image/slide3-1.JPG b/image/slide3-1.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 278e63d..0000000[m
+Binary files a/image/slide3-1.JPG and /dev/null differ
+[1mdiff --git a/image/slide3-2.JPG b/image/slide3-2.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 8c8efaa..0000000[m
+Binary files a/image/slide3-2.JPG and /dev/null differ
+[1mdiff --git a/image/slide3-3.JPG b/image/slide3-3.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex b186f91..0000000[m
+Binary files a/image/slide3-3.JPG and /dev/null differ
+[1mdiff --git a/image/slide3-4.JPG b/image/slide3-4.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 44b2911..0000000[m
+Binary files a/image/slide3-4.JPG and /dev/null differ
+[1mdiff --git a/image/slide3-5.JPG b/image/slide3-5.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex e200848..0000000[m
+Binary files a/image/slide3-5.JPG and /dev/null differ
+[1mdiff --git a/image/slide4-1.JPG b/image/slide4-1.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex e85be14..0000000[m
+Binary files a/image/slide4-1.JPG and /dev/null differ
+[1mdiff --git a/image/slide4-2.JPG b/image/slide4-2.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 7bc01d2..0000000[m
+Binary files a/image/slide4-2.JPG and /dev/null differ
+[1mdiff --git a/image/slide4-3.JPG b/image/slide4-3.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 4e7ef0c..0000000[m
+Binary files a/image/slide4-3.JPG and /dev/null differ
+[1mdiff --git a/image/slide4-4.JPG b/image/slide4-4.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex d5b102a..0000000[m
+Binary files a/image/slide4-4.JPG and /dev/null differ
+[1mdiff --git a/image/slide4-5.JPG b/image/slide4-5.JPG[m
+[1mdeleted file mode 100644[m
+[1mindex 9f04170..0000000[m
+Binary files a/image/slide4-5.JPG and /dev/null differ
+[1mdiff --git a/index.html b/index.html[m
+[1mindex c3f2cc9..e90d243 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -31,8 +31,8 @@[m
+             <li><a href="https://goo.gl/forms/XvQhessLe8q17Llq1" target="_blank" title="Browse Plan Monitoring">Feedback & Suggestions</a></li>[m
+         </ul>[m
+ 		<ul id="proposal">[m
+[31m-            <li><a href="masterlist" target="_blank">Sample MasterList</a></li>[m
+[31m-            <li><a href="fitEvent" target="_blank">Sample Events</a></li>[m
+[32m+[m[32m            <li><a href="#">Sample MasterList</a></li>[m
+[32m+[m[32m            <li><a href="fitEvent">Sample Events</a></li>[m
+         </ul>[m
+ 		<ul id="workGuide">[m
+             <li><a href="../misc/pdf/dp.pdf" target="_blank">Detailed Plan</a></li>[m
