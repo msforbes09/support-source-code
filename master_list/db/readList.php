@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 // //print_r ($_REQUEST);
 // $filter = '';
 // /*
@@ -16,7 +17,7 @@
 // 	$filter .= ' and staff.team = ' . $_REQUEST["team_filter"];
 // }
 // try {
-// 	$pdo = new PDO( 'mysql:host=localhost;dbname=centralized;charset=utf8;', 'root', 'admin' );
+	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
 // 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 // 	$stmt = $pdo->prepare(
 // 	"select
