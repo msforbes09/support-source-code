@@ -1,4 +1,14 @@
 $(function(){
+function load(){//load table
+	$.ajax({
+			type: 'post',
+			url: 'db/readList.php'
+		}).done(function(data){
+			$("#content").html(data)
+		}).fail(function(data){
+			alert('Failed.')
+		})
+}
 $(document).on('click','#master_add',function(){//show modal
 	$.ajax({
 		type: 'post',
@@ -84,19 +94,7 @@ $(document).on('click','#add_save',function(){
 })
 load()
 })
-function load(){//load table
-	$.ajax({
-			type: 'post',
-			url: 'server/staff_read.php',
-			data: {
-				team_filter: $('#team_value').val()
-			}
-		}).done(function(data){
-			$("#content").html(data)
-		}).fail(function(data){
-			alert('Failed.')
-		})
-}
+
 function message(title,message){
 	$('.modal-dialog').removeClass('modal-lg');
 	$('.modal-dialog').removeClass('modal-sm');
