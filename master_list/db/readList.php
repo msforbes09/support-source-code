@@ -16,64 +16,46 @@ require_once 'config.php';
 // if ($_REQUEST["team_filter"] != 1){
 // 	$filter .= ' and staff.team = ' . $_REQUEST["team_filter"];
 // }
-// try {
+try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
-// 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-// 	$stmt = $pdo->prepare(
-// 	"select
-// 		staff.staff_id as staff_id,
-// 		staff.id_num as id_num,
-// 		staff.first_name as first_name,
-// 		staff.middle_name as middle_name,
-// 		staff.last_name as last_name,
-// 		staff.nick_name as nick_name,
-// 		employment_status.status_desc as employment_stat,
-// 		job_category.category_desc as job_cate,
-// 		team.team_name as team,
-// 		job_desc.job_name as job_desc
-// 	from 
-// 		staff,
-// 		employment_status,
-// 		job_category,
-// 		team,
-// 		job_desc
-// 	where
-// 		employment_status.status_id = staff.employment_stat
-// 		and
-// 		job_category.category_id = staff.job_cate
-// 		and
-// 		team.team_id = staff.team
-// 		and
-// 		job_desc.job_id = staff.job_desc
-// 		$filter
-// 		order by staff.staff_id");
-// 	$stmt->execute();
+	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	$stmt = $pdo->prepare("
+		SELECT s.staffId, s.idNum, concat(s.firstName, ' ', s.lastName) as fullName, s.nickName, e.statDesc, j.jobName, t.teamName 
+		FROM
+		staff s
+		JOIN empstatus e
+		ON s.statId	= e.statId
+		JOIN jobdesc j
+		ON s.jobId = j.jobId
+		JOIN team t
+		ON s.teamId = t.teamId	
+		");
+	$stmt->execute();
 // 	echo $stmt->rowCount() .' record/s found.';
-// 	$content = '';
-// 	$count = 1;
-// 	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
-// 		$content .= '<tr id="data_' . $row["staff_id"] . '">';
-// 		$content .= '<td>'. $count .'.</td>';
-// 		$content .= '<td>'. $row["id_num"] .'</td>';
-// 		$content .= '<td>'. $row["first_name"] . ' ' . $row["middle_name"] . ' ' . $row["last_name"] .'</td>';
-// 		$content .= '<td>'. $row["nick_name"] .'</td>';
-// 		$content .= '<td>'. $row["employment_stat"] .'</td>';
-// 		$content .= '<td>'. $row["job_cate"] .'</td>';
-// 		$content .= '<td>'. $row["team"] .'</td>';
-// 		$content .= '<td>'. $row["job_desc"] .'</td>';
-// 		$content .= '</tr>';
-// 		$count += 1;
-// 	}
-// 	} catch( PDOException $e ) {
-// 		echo $e->getMessage();
-// 	}
-// $pdo = null;
+	$content = '';
+	$count = 1;
+	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
+		$content .= '<tr>';
+		$content .= '<td>'. $count .'.</td>';
+		$content .= '<td>'. $row["idNum"] .'</td>';
+		$content .= '<td>'. $row["fullName"] .'</td>';
+		$content .= '<td>'. $row["nickName"] .'</td>';
+		$content .= '<td>'. $row["statDesc"] .'</td>';
+		$content .= '<td>'. $row["jobName"] .'</td>';
+		$content .= '<td>'. $row["teamName"] .'</td>';
+		$content .= '</tr>';
+		$count += 1;
+		}
+} catch( PDOException $e ) {
+	echo $e->getMessage();
+}
+$pdo = null;
 ?>
-<table class="my_table">
-	<thead>
+<table class="table table-bordered table-condensed table-striped table-hover">
+	<thead class="bg-primary">
 		<tr>
-			<th></th>
-			<th>ID NO.</th>
+			<th>No.</th>
+			<th>Id No.</th>
 			<th>Name</th>
 			<th>Nick Name</th>
 			<th>Status</th>
@@ -82,6 +64,6 @@ require_once 'config.php';
 		</tr>
 	</thead>
 	<tbody>
-		<?php //echo $content; ?>
+		<?php echo $content; ?>
 	</tbody>
 </table>
