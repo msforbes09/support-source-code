@@ -56,7 +56,7 @@ $pdo = null;
 		<tr>
 			<th>No.</th>
 			<th>Id No.</th>
-			<th>Name</th>
+			<th>Full Name</th>
 			<th>Nick Name</th>
 			<th>Status</th>
 			<th>Job Desc</th>

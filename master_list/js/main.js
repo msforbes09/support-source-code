@@ -9,25 +9,9 @@ function load(){//load table
 			alert('Failed.')
 		})
 }
-$(document).on('click','#master_add',function(){//show modal
-	$.ajax({
-		type: 'post',
-		url: 'server/add_modal.php',
-		data: {
-				team_filter: $('#team_value').val()
-			}
-	}).done(function(data){
-		$('.modal-body').html(data)
-		$('.modal-title').html('Add new staff')
-		$('.modal-dialog').removeClass('modal-lg');
-		$('.modal-dialog').removeClass('modal-sm');
-		$('.modal-footer').html(
-			'<input type="button" class="btn btn-primary" id="add_save" value="Save" />' +
-			'<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
-		$('.modal').modal('show')
-	}).fail(function(data){
-		message('Error','Something went wrong!!!')
-	})
+$(document).on('click','#newStaffButton',function(){//show modal
+	$('.modal-body').load('db/newStaffInput.php');
+	$('.modal').modal('show');
 })
 $(document).on('change','#team_select',function(){//get team process
 	$.ajax({
@@ -47,16 +31,6 @@ $(document).on('keypress','#id_num_txt',function(){//number only
 })
 $('.modal').on('shown.bs.modal', function () {//modal set focus
 	$('.default').focus()
-})
-$(document).on('keydown','html',function(){//disable F12
-	if (event.keyCode == 123){
-		event.preventDefault()
-	}
-})
-$(document).on('dragstart','html',function(){//disable drag
-	event.preventDefault()
-	console.log('drag')
-	return false
 })
 $(document).on('click','#add_save',function(){
 	var id_num = $('#id_num_txt').val()
@@ -110,24 +84,4 @@ function isNumber(evt) {
         return false;
     }
     return true;
-}
-function validate_error(err_msg,err_obj,err_out,success_msg,success_title,modal_close){
-	if(err_msg != ''){
-		if(err_obj != '' && err_out != ''){
-			$(err_obj).addClass('has-error')
-			$(err_out).html(err_msg)
-		}else{
-			return message('Error',err_msg)
-		}
-	}else{
-		if(success_title != ''){
-			return message(success_title,success_msg)
-		}else{
-			$('#alert_prompt').html('<h3><marquee behavior="alternate"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> ' + success_msg + '</marquee></h3>')
-		}			
-		if(modal_close == 1){
-			$('.modal').modal('hide')
-			load()
-		}
-	}
 }
