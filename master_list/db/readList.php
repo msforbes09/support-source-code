@@ -1,21 +1,5 @@
 <?php
 require_once 'config.php';
-// //print_r ($_REQUEST);
-// $filter = '';
-// /*
-// if ($_REQUEST["employment_stat_filter"] != 1){
-// 	$filter .= ' and staff.employment_stat = ' . $_REQUEST["employment_stat_filter"];
-// }
-// if ($_REQUEST["job_cate_filter"] != 1){
-// 	$filter .= ' and staff.job_cate = ' . $_REQUEST["job_cate_filter"];
-// }
-// if ($_REQUEST["job_desc_filter"] != 1){
-// 	$filter .= ' and staff.job_desc = ' . $_REQUEST["job_desc_filter"];
-// }
-// */
-// if ($_REQUEST["team_filter"] != 1){
-// 	$filter .= ' and staff.team = ' . $_REQUEST["team_filter"];
-// }
 try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -31,7 +15,6 @@ try {
 		ON s.teamId = t.teamId	
 		");
 	$stmt->execute();
-// 	echo $stmt->rowCount() .' record/s found.';
 	$content = '';
 	$count = 1;
 	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){

@@ -1,5 +1,19 @@
 <?php
-//require_once 'function.php';
+require_once 'config.php';
+try {
+	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
+	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	$stmt = $pdo->prepare("
+		SELECT statId, statDesc
+		FROM empstatus;
+		");
+	$stmt->execute();
+	$statList  = '';
+	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){ $statList .= '<option value="'. $row["statId"] .'">'. $row["statDesc"] .'</option>'; }
+} catch( PDOException $e ) {
+	echo $e->getMessage();
+}
+$pdo = null;
 ?>
 <form>
 	<div class="row">
@@ -79,8 +93,9 @@
 			<label for="empStatText">Employment Status: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="empStatText" class="form-control input-sm" required="">
-				
+			<select id="empStatText" class="form-control input-sm" required>
+				<option selected disabled>Status</option>
+				<?php echo $statList ?>
 			</select>
 		</div>
 	</div>
@@ -89,7 +104,7 @@
 			<label for="">Job Description: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="" class="form-control input-sm" required="">
+			<select id="" class="form-control input-sm" required>
 				
 			</select>
 		</div>
@@ -99,7 +114,7 @@
 			<label for="">Team: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="" class="form-control input-sm" required="">
+			<select id="" class="form-control input-sm" required>
 				
 			</select>
 		</div>
@@ -109,7 +124,7 @@
 			<label for="genderText">Gender: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="genderText" class="form-control input-sm" required="">
+			<select id="genderText" class="form-control input-sm" required>
 				<option></option>
 				<option value="m">Male</option>
 				<option value="f">Female</option>
