@@ -18,7 +18,7 @@ try {
 	$content = '';
 	$count = 1;
 	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){
-		$content .= '<tr class="staffsTableItem"  data-id="'. $row["staffId"] .'">';
+		$content .= '<tr class="staffsTableItem" data-id="'. $row["staffId"] .'">';
 		$content .= '<td>'. $count .'.</td>';
 		$content .= '<td>'. $row["idNum"] .'</td>';
 		$content .= '<td class="fullName">'. $row["fullName"] .'</td>';
