@@ -15,7 +15,7 @@ try{
 		ON s.jobId = j.jobId
 		JOIN team t
 		ON s.teamId = t.teamId
-		WHERE s.staffId = 1;
+		WHERE s.staffId = :staffId;
 		");
 	$stmt->bindValue(':staffId', $id, PDO::PARAM_INT);
 	$stmt->execute();

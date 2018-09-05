@@ -11,7 +11,8 @@ try {
 		JOIN jobdesc j
 		ON s.jobId = j.jobId
 		JOIN team t
-		ON s.teamId = t.teamId;	
+		ON s.teamId = t.teamId
+		ORDER BY s.staffId;	
 		");
 	$stmt->execute();
 	$content = '';
