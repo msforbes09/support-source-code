@@ -15,6 +15,7 @@
 			<?php //require_once 'interface/user_form.php'; ?>
 			<div>
 				<input type="button" id="newStaffButton" class="btn btn-primary" value="New">
+				<input type="button" id="test" class="btn btn-default" value="test">
 			</div>
 			<div id="content"></div>
 		</div>

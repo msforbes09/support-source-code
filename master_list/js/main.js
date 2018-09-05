@@ -14,56 +14,41 @@ $(document).on('click','#newStaffButton',function(){//show modal
 	$('.modal-body').load('db/newStaffInput.php');
 	$('.modal').modal('show');
 })
-// $(document).on('click','#add_save',function(){
-// 	var id_num = $('#id_num_txt').val()
-// 	var first_name = $('#first_name_txt').val().trim().toUpperCase()
-// 	var middle_name = $('#middle_name_txt').val().trim().toUpperCase()
-// 	var last_name = $('#last_name_txt').val().trim().toUpperCase()
-// 	var nick_name = $('#nick_name_txt').val().trim().toUpperCase()
-// 	var employment_stat = $('#employment_stat_select').val()
-// 	var job_cate = $('#job_cate_select').val()
-// 	var team = $('#team_select').val()
-// 	var job_desc = $('#job_desc_select').val()
-// 	if (id_num.length != 7 || !first_name || !middle_name || !last_name || !nick_name || employment_stat == 1 || job_cate == 1 || job_desc == 1){
-// 		validate_error('Please Review your record!',' ','#err_prompt','Data Successfully Updated!','',1)
-// 		return false
-// 	}
-// 	$.ajax({
-// 		type: 'post',
-// 		url: 'server/add_save.php',
-// 		data: {
-// 			id_num: id_num,
-// 			first_name: first_name,
-// 			middle_name: middle_name,
-// 			last_name: last_name,
-// 			nick_name: nick_name,
-// 			employment_stat: employment_stat,
-// 			job_cate: job_cate,
-// 			team: team,
-// 			job_desc: job_desc
-// 		}
-// 	}).done(function(data){
-// 		validate_error(data,'.input-group','#err_prompt','Data Successfully Updated!','',1)
-// 	}).fail(function(data){
-// 		message('Error','Something went wrong!!!')
-// 	})
-// })
+$(document).on('submit','#newStaff',function(e){
+	e.preventDefault();
+	const staff = {
+		idNum : $('#idText').val(),
+		firstName : $('#firstNameText').val(),
+	    middleName : $('#middleNameText').val(),
+	    lastName : $('#lastNameText').val(),
+	    nickName : $('#nickNameText').val(),
+	    birthDate : $('#birthDateText').val(),
+	    hiredDate : $('#hiredDateText').val(),
+	    email : $('#emailText').val(),
+	    phoneNumber : $('#phoneNumberText').val(),
+	    statId : $('#statList').val(),
+	    jobId : $('#jobList').val(),
+	    teamId : $('#teamList').val(),
+	    gender : $('#genderText').val()
+	}
+	$.ajax({
+		type: 'post',
+		url: 'db/newStaffSave.php',
+		data: staff
+	}).done(function(data){
+		$('.modal').modal('hide');
+		load();
+	}).fail(function(data){
+		alert(data);
+	})
+
+	console.table(staff);
+})
+$(document).on('click','#test',function(){
+	const a = 'asdf asdf asdf'.split(' ')
+    	.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    	.join(' ');
+	console.log(a)
+})
 load()
 })
-
-// function message(title,message){
-// 	$('.modal-dialog').removeClass('modal-lg');
-// 	$('.modal-dialog').removeClass('modal-sm');
-// 	$('.modal-title').html(title);
-// 	$('.modal-body').html('<h4>' + message + '</h4>');
-// 	$('.modal-footer').html('<button type="button" id="default" class="btn btn-default" data-dismiss="modal">Close</button>');
-// 	$('.modal').modal('show')
-// }
-// function isNumber(evt) {
-//     evt = (evt) ? evt : window.event;
-//     var charCode = (evt.which) ? evt.which : evt.keyCode;
-//     if (charCode < 46 || charCode > 57) {
-//         return false;
-//     }
-//     return true;
-// }

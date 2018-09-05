@@ -25,7 +25,7 @@ try {
 }
 $pdo = null;
 ?>
-<form>
+<form id="newStaff">
 	<div class="row">
 		<div class="col-sm-4">
 			<label for="idText">I.D. Number: </label>
@@ -92,38 +92,38 @@ $pdo = null;
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-			<label for="cpText">Cellphone Number: </label>
+			<label for="phoneNumberText">Cellphone Number: </label>
 		</div>
 		<div class="col-sm-8">
-			<input id="cpText" type="text" class="form-control input-sm" placeholder="09xxxxxxxxx" maxlength="11" required/>
+			<input id="phoneNumberText" type="text" class="form-control input-sm" placeholder="09xxxxxxxxx" maxlength="11" required/>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-			<label for="empStatText">Employment Status: </label>
+			<label for="statList">Employment Status: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="empStatText" class="form-control input-sm">
+			<select id="statList" class="form-control input-sm">
 				<?php echo $statList ?>
 			</select>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-			<label for="">Job Description: </label>
+			<label for="jobList">Job Description: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="" class="form-control input-sm" required>
+			<select id="jobList" class="form-control input-sm" required>
 				<?php echo $jobList ?>
 			</select>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
-			<label for="">Team: </label>
+			<label for="teamList">Team: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="" class="form-control input-sm" required>
+			<select id="teamList" class="form-control input-sm" required>
 				<?php echo $teamList ?>
 			</select>
 		</div>
