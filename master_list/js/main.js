@@ -14,7 +14,7 @@ $(document).on('click','#newStaffButton',function(){//show modal
 	$('.modal-body').load('db/newStaffInput.php');
 	$('.modal').modal('show');
 })
-$(document).on('submit','#newStaff',function(e){
+$(document).on('submit','#newStaff',function(e){//save staff data
 	e.preventDefault();
 	const staff = {
 		idNum : $('#idText').val(),
@@ -44,7 +44,22 @@ $(document).on('submit','#newStaff',function(e){
 
 	console.table(staff);
 })
-$(document).on('click','#test',function(){
+$(document).on('click','.staffsTableItem',function(){
+	const data = {id: this.dataset.id};
+	const fullName = this.querySelector('.fullName').textContent;
+	$.ajax({
+		type: 'post',
+		url: 'db/readStaffData.php',
+		data
+	}).done(function(data){
+		$('.modal-title').text(fullName);
+		$('.modal-body').html(data);
+		$('.modal').modal('show');
+	}).fail(function(data){
+		alert(data);
+	})
+})
+$(document).on('click','#test',function(){//test functions
 	const a = 'asdf asdf asdf'.split(' ')
     	.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
     	.join(' ');
