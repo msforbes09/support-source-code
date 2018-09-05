@@ -1,16 +1,26 @@
 <?php
 require_once 'config.php';
+$statList  = '';
+$jobList  = '';
+$teamList  = '';
+
 try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-	$stmt = $pdo->prepare("
-		SELECT statId, statDesc
-		FROM empstatus;
-		");
+	
+	$stmt = $pdo->prepare("SELECT statId, statDesc FROM empstatus;");
 	$stmt->execute();
-	$statList  = '';
 	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){ $statList .= '<option value="'. $row["statId"] .'">'. $row["statDesc"] .'</option>'; }
-} catch( PDOException $e ) {
+
+	$stmt = $pdo->prepare("SELECT jobId, jobName FROM jobdesc;");		
+	$stmt->execute();
+	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){ $jobList .= '<option value="'. $row["jobId"] .'">'. $row["jobName"] .'</option>'; }
+
+	$stmt = $pdo->prepare("SELECT teamId, teamName FROM team;");
+	$stmt->execute();
+	while( $row = $stmt->fetch(PDO::FETCH_ASSOC) ){ $teamList .= '<option value="'. $row["teamId"] .'">'. $row["teamName"] .'</option>'; }
+
+} catch ( PDOException $e ) {
 	echo $e->getMessage();
 }
 $pdo = null;
@@ -93,8 +103,7 @@ $pdo = null;
 			<label for="empStatText">Employment Status: </label>
 		</div>
 		<div class="col-sm-8">
-			<select id="empStatText" class="form-control input-sm" required>
-				<option selected disabled>Status</option>
+			<select id="empStatText" class="form-control input-sm">
 				<?php echo $statList ?>
 			</select>
 		</div>
@@ -105,7 +114,7 @@ $pdo = null;
 		</div>
 		<div class="col-sm-8">
 			<select id="" class="form-control input-sm" required>
-				
+				<?php echo $jobList ?>
 			</select>
 		</div>
 	</div>
@@ -115,7 +124,7 @@ $pdo = null;
 		</div>
 		<div class="col-sm-8">
 			<select id="" class="form-control input-sm" required>
-				
+				<?php echo $teamList ?>
 			</select>
 		</div>
 	</div>
@@ -125,11 +134,12 @@ $pdo = null;
 		</div>
 		<div class="col-sm-8">
 			<select id="genderText" class="form-control input-sm" required>
-				<option></option>
 				<option value="m">Male</option>
 				<option value="f">Female</option>
 			</select>
 		</div>
 	</div>
+	<hr>
 	<input type="submit" class="btn btn-sm btn-primary" value="Save">
+	<input type="button" class="btn btn-sm btn-default" data-dismiss="modal" value="Close">
 </form>
