@@ -97,15 +97,15 @@ ALTER TABLE `team`
 COMMIT;
 
 --
--- Table structure for table `revisionprocess`
+-- Table structure for table `process_table`
 --
 
-CREATE TABLE `revisionprocess` (
+CREATE TABLE `process_table` (
   `processId` int(11) NOT NULL,
   `processName` varchar(30) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-INSERT INTO `revisionprocess` (`processId`, `processName`) VALUES
+INSERT INTO `process_table` (`processId`, `processName`) VALUES
 (1, 'Encoding'),
 (2, '1st Check'),
 (3, '1st Revision'),
@@ -114,23 +114,23 @@ INSERT INTO `revisionprocess` (`processId`, `processName`) VALUES
 (6, 'Final Check'),
 (7, 'Final Revision');
 
-ALTER TABLE `revisionprocess`
+ALTER TABLE `process_table`
   ADD PRIMARY KEY (`processId`);
 
-ALTER TABLE `revisionprocess`
+ALTER TABLE `process_table`
   MODIFY `processId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 --
--- Table structure for table `processevent`
+-- Table structure for table `event_table`
 --
 
-CREATE TABLE `processevent` (
+CREATE TABLE `event_table` (
   `eventId` int(7) NOT NULL,
   `eventName` varchar(30) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-INSERT INTO `processevent` (`eventId`, `eventName`) VALUES
+INSERT INTO `event_table` (`eventId`, `eventName`) VALUES
 (1, 'Received'),
 (2, 'Start'),
 (3, 'Pause'),
@@ -138,9 +138,9 @@ INSERT INTO `processevent` (`eventId`, `eventName`) VALUES
 (5, 'Turn Over'),
 (6, 'Finish');
 
-ALTER TABLE `processevent`
+ALTER TABLE `event_table`
   ADD PRIMARY KEY (`eventId`);
 
-ALTER TABLE `processevent`
+ALTER TABLE `event_table`
   MODIFY `eventId` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
