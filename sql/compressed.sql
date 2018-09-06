@@ -95,3 +95,52 @@ ALTER TABLE `team`
 ALTER TABLE `team`
   MODIFY `teamId` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
+
+--
+-- Table structure for table `revisionprocess`
+--
+
+CREATE TABLE `revisionprocess` (
+  `processId` int(11) NOT NULL,
+  `processName` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `revisionprocess` (`processId`, `processName`) VALUES
+(1, 'Encoding'),
+(2, '1st Check'),
+(3, '1st Revision'),
+(4, '2nd Check'),
+(5, '2nd Revision'),
+(6, 'Final Check'),
+(7, 'Final Revision');
+
+ALTER TABLE `revisionprocess`
+  ADD PRIMARY KEY (`processId`);
+
+ALTER TABLE `revisionprocess`
+  MODIFY `processId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
+
+--
+-- Table structure for table `processevent`
+--
+
+CREATE TABLE `processevent` (
+  `eventId` int(7) NOT NULL,
+  `eventName` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `processevent` (`eventId`, `eventName`) VALUES
+(1, 'Received'),
+(2, 'Start'),
+(3, 'Pause'),
+(4, 'Continue'),
+(5, 'Turn Over'),
+(6, 'Finish');
+
+ALTER TABLE `processevent`
+  ADD PRIMARY KEY (`eventId`);
+
+ALTER TABLE `processevent`
+  MODIFY `eventId` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
