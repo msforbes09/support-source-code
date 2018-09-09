@@ -144,3 +144,112 @@ ALTER TABLE `event_table`
 ALTER TABLE `event_table`
   MODIFY `eventId` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
+
+--
+-- Table structure for table `housetype_table`
+--
+
+CREATE TABLE `housetype_table` (
+  `typeId` int(7) NOT NULL,
+  `typeName` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `housetype_table`
+  ADD PRIMARY KEY (`typeId`);
+
+ALTER TABLE `housetype_table`
+  MODIFY `typeId` int(7) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+--
+-- Table structure for table `plan_table`
+--
+
+CREATE TABLE `plan_table` (
+  `planId` int(7) NOT NULL,
+  `planNumber` varchar(30) COLLATE utf8_bin NOT NULL,
+  `planName` varchar(30) COLLATE utf8_bin NOT NULL,
+  `typeId` int(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `plan_table`
+  ADD PRIMARY KEY (`planId`),
+  ADD KEY `typeId` (`typeId`);
+
+ALTER TABLE `plan_table`
+  MODIFY `planId` int(7) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `plan_table`
+  ADD CONSTRAINT `plan_table_ibfk_1` FOREIGN KEY (`typeId`) REFERENCES `housetype_table` (`typeId`);
+COMMIT; 
+
+--
+-- Table structure for table `gravity_table`
+--
+
+CREATE TABLE `gravity_table` (
+  `gravityId` int(7) NOT NULL,
+  `gravityName` varchar(10) COLLATE utf8_bin NOT NULL,
+  `gravityDesc` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `gravity_table`
+  ADD PRIMARY KEY (`gravityId`);
+
+ALTER TABLE `gravity_table`
+  MODIFY `gravityId` int(7) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+--
+-- Table structure for table `receive_table`
+--
+
+CREATE TABLE `receive_table` (
+  `receiveId` int(7) NOT NULL,
+  `planId` int(7) NOT NULL,
+  `receiveDate` date NOT NULL,
+  `dueDate` date NOT NULL,
+  `gravityId` int(7) NOT NULL,
+  `remark` varchar(50) COLLATE utf8_bin NOT NULL,
+  `status` varchar(20) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `receive_table`
+  ADD PRIMARY KEY (`receiveId`),
+  ADD KEY `planId` (`planId`),
+  ADD KEY `gravityId` (`gravityId`);
+
+ALTER TABLE `receive_table`
+  MODIFY `receiveId` int(7) NOT NULL AUTO_INCREMENT;
+
+--
+-- Table structure for table `monitoring_table`
+--
+
+CREATE TABLE `monitoring_table` (
+  `monitoringId` int(7) NOT NULL,
+  `receiveId` int(7) NOT NULL,
+  `processId` int(7) NOT NULL,
+  `eventId` int(7) NOT NULL,
+  `staffId` int(7) NOT NULL,
+  `note` varchar(50) COLLATE utf8_bin NOT NULL,
+  `time` datetime NOT NULL,
+  `dateUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+ALTER TABLE `monitoring_table`
+  ADD PRIMARY KEY (`monitoringId`),
+  ADD KEY `receiveId` (`receiveId`),
+  ADD KEY `processId` (`processId`),
+  ADD KEY `eventId` (`eventId`),
+  ADD KEY `staffId` (`staffId`);
+
+ALTER TABLE `monitoring_table`
+  MODIFY `monitoringId` int(7) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `monitoring_table`
+  ADD CONSTRAINT `monitoring_table_ibfk_1` FOREIGN KEY (`receiveId`) REFERENCES `receive_table` (`receiveId`),
+  ADD CONSTRAINT `monitoring_table_ibfk_2` FOREIGN KEY (`processId`) REFERENCES `process_table` (`processId`),
+  ADD CONSTRAINT `monitoring_table_ibfk_3` FOREIGN KEY (`eventId`) REFERENCES `event_table` (`eventId`),
+  ADD CONSTRAINT `monitoring_table_ibfk_4` FOREIGN KEY (`staffId`) REFERENCES `staff` (`staffId`);
+COMMIT;
