@@ -1,18 +1,3 @@
-function openHtml() {
-  var html = HtmlService.createHtmlOutputFromFile('index');
-  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
-      .showModalDialog(html, 'Dialog title');
-}
-
-function insertDate() {
-  var dateTime = new Date();
-  SpreadsheetApp.getActiveRange().setValue(dateTime.getYear() + "/" + (dateTime.getMonth() + 1) + "/" + dateTime.getDate());
-}
-
-function insertTime() {
-  var dateTime = new Date();
-  SpreadsheetApp.getActiveRange().setValue(dateTime);
-}
 function isDate(v) {
   if (Object.prototype.toString.call(v) === "[object Date]") {
     if (isNaN(v.getTime())) {
@@ -24,7 +9,7 @@ function isDate(v) {
     return false;
   }
 }
-function onEdita(e) {
+function onEdit(e) {
   var ui = SpreadsheetApp.getUi();
   var sh = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var row = sh.getActiveCell().getRowIndex();
@@ -37,20 +22,20 @@ function onEdita(e) {
   switch(sheet){
   case "Revision": 
   case "Basic": 
-    if(row <=2){
-      ui.alert("You are not allowed to modify this Range.");
-      cell.setValue(e.oldValue);
-      return;
-    }
+//    if(row <=2){
+//      ui.alert("You are not allowed to modify this Range.");
+//      cell.setValue(e.oldValue);
+//      return;
+//    }
 
     switch(col){
     case 9:
-    case 14:
-    case 19:
-    case 24:
-    case 29:
-    case 34:
+    case 15:
+    case 21:
+    case 27:
+    case 33:
     case 39:
+    case 45:
       if(value){
         //ui.alert(process)
         sh.getRange(row,7).setValue(process);
@@ -58,18 +43,18 @@ function onEdita(e) {
       break;
     case 10:
     case 11:
-    case 15:
     case 16:
-    case 20:
-    case 21:
-    case 25:
-    case 26:
-    case 30:
-    case 31:
+    case 17:
+    case 22:
+    case 23:
+    case 28:
+    case 29:
+    case 34:
     case 35:
-    case 36:
     case 40:
     case 41:
+    case 46:
+    case 47:
       if (!isDate(value) && value){
         ui.alert("Data is not a valid value.");
         if(e.oldValue){
