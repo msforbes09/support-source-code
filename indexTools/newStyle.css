@@ -1,21 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu Mono');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Playfair+Display:900|Open+Sans');
+
 *{
     padding: 0;
     margin: 0;
 }
-body {
-    background: #ffffff;
-    background-image: url('../image/cad3.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-attachment: fixed;
-    background-size: auto 100vh;
-    /*font-family: 'Open Sans', sans-serif;
-    color: #000;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 300px auto;*/
+*::-webkit-scrollbar {
+    width: 0px;
 }
-body:after {
+/*body:after {
     content: "forbesarnel09@gmail.com";
     position: fixed;
     left: 0;
@@ -24,13 +17,44 @@ body:after {
     padding: 5px;
     color: #000000;
     font-size: 10pt;
+}*/
+body{
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+.header {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    background-image: url('../image/cad3.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: auto 100%;
+    /*border: 1px solid red;*/
+    /*font-family: 'Open Sans', sans-serif;
+    color: #000;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 300px auto;*/
 }
 
-.container{
+.overlay{
     width: 100vw;
     height: 100vh;
     background-color: #000000;
-    opacity: 0.6;
+    opacity: 0.5;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     /*border: 1px solid red;*/
+}
+.header-title{
+    padding: 0 0 5px 50px;
+    font-size: 1.7em;
+}
+.header-sub-title{
+    padding: 0 0 30px 50px;
+    font-size: 1.3sem;
 }
