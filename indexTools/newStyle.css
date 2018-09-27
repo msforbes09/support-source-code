@@ -44,6 +44,10 @@ body{
 }
 .snowman{
     height: 250px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.8;
 }
 
 .overlay{
@@ -124,4 +128,26 @@ section p:hover{
     transform: scale(1.1);
     transition: all 0.3s ease;
     color: red;
+}
+.nav{
+    /*border: 1px solid red;*/
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em; 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.5;
+}
+.nav *{
+    line-height: 60px;
+    cursor: pointer;
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    opacity: 1;
 }

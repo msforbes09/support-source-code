@@ -11,13 +11,20 @@
 	<div class="header">
 		<img class="snowman" src="image/sleigh.png">
 	</div>
-	<div class="overlay">
+	<div id="home" class="overlay">
 		<div class="header-title">Revision Department</div>
 		<div class="header-sub-title">Shortcuts and Links</div>
 		<div class="header-button">
-			<a href="#monitoring"><input type="button" id="start" value="Get Started"></a>
+			<input type="button" id="start" data-target="monitoring" value="Get Started">
 		</div>
 	</div>
+	<nav class="nav">
+		<div data-target="home">Home</div>
+		<div data-target="monitoring">Monitoring</div>
+		<div data-target="manual">Manual</div>
+		<div data-target="report">Report</div>
+		<div data-target="additional">Additional</div>
+	</nav>
 	<main>
 		<section id="monitoring">
 			<div class="title">Monitoring</div>
