@@ -87,6 +87,9 @@ main{
 }
 .content{
     line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .title{
     font-size: 1.6em;
@@ -100,4 +103,20 @@ main{
 #manual,#additional{
     background-color: #000000;
     color: #ffffff;
+}
+a{
+    text-decoration: none;
+}
+#manual a,
+#additional a{
+    color: #ffffff;
+}
+#monitoring a,
+#report a{
+    color: #000000;
+}
+section p:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+    color: red;
 }
