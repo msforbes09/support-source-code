@@ -45,7 +45,7 @@ body{
 .snowman{
     height: 250px;
     position: absolute;
-    top: 10px;
+    top: 70px;
     left: 10px;
     opacity: 0.8;
 }
@@ -140,6 +140,7 @@ section p:hover{
     bottom: 0;
     background-color: #000000;
     opacity: 0.5;
+    z-index: 2;
 }
 .nav *{
     line-height: 60px;
