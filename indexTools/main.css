@@ -110,7 +110,7 @@ main{
     font-style: italic;
 }
 #manual,#additional{
-    background-color: #000000;
+    background-color: #0A0A10;
     color: #ffffff;
 }
 a{
@@ -145,9 +145,13 @@ a{
     opacity: 0.5;
     z-index: 2;
 }
-.nav *{
+.nav [data-target]{
     line-height: 60px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.nav [data-target]:hover{
+    transform: scale(1.1);
 }
 .fixed{
     position: fixed;
