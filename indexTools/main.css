@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat Alternates');
+@import url('https://fonts.googleapis.com/css?family=Reenie Beanie');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *{
@@ -8,20 +8,6 @@
 :root {
       --image: url('../image/cad3.jpg');
     }
-/**::-webkit-scrollbar {
-    width: 0px;
-}*/
-/*body:after {
-    content: "forbesarnel09@gmail.com";
-    position: fixed;
-    display: block;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
-    color: #000000;
-    font-size: 5pt;
-}*/
 html{
     scroll-behavior: smooth;
 }
