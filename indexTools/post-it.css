@@ -2,7 +2,6 @@
     position: absolute;
     right: 60px;
     top: 50px;
-    z-index: 2;
     width: 400px;
     z-index: 2;
     background: #ffffcc; /* Old browsers */
@@ -15,7 +14,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffcc', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     border:1px solid #E8E8E8;
     border-bottom-right-radius: 100px 10px;
-    box-shadow: 1px 1px 1px 0 #999999;
+    box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
 }
 .tape{
@@ -59,6 +58,6 @@
 }
 .note-link{
     cursor: pointer;
-    color: #0000ff;
+    color: #ff0000;
     font-weight: bold;
 }
