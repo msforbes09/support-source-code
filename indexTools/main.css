@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Reenie Beanie');
+@import url('https://fonts.googleapis.com/css?family=Architects Daughter');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *{
@@ -40,7 +40,7 @@ body{
     width: 100%;
     height: 100vh;
     background-color: #000000;
-    opacity: 0.5;
+    opacity: 0.3;
     color: white;
     display: flex;
     flex-direction: column;
