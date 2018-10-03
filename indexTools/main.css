@@ -29,10 +29,10 @@ body{
 
 }
 .snowman{
-    height: 250px;
+    max-height: 25vh;
     position: absolute;
-    top: 70px;
-    left: 10px;
+    top: 8vh;
+    left: 2vw;
     opacity: 0.8;
 }
 
