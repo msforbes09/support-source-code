@@ -16,6 +16,8 @@
     border-bottom-right-radius: 100px 10px;
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
+    transform: rotate(5deg);
+    transform-origin: 0%
 }
 .tape{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
@@ -33,11 +35,12 @@
     top: 0;
 }
 .tape1{
-    transform: rotate(45deg);
+    transform: rotate(40deg);
     right: -70px;
+    top: -30px;
 }
 .tape2{
-    transform: rotate(135deg);
+    transform: rotate(130deg);
     left: -70px;
 }
 .post-it p{
