@@ -1,7 +1,7 @@
 .post-it{
     position: absolute;
-    right: 90px;
-    top: 50px;
+    right: 120px;
+    top: 40px;
     width: 400px;
     z-index: 2;
     background: #ffffcc; /* Old browsers */
@@ -16,7 +16,7 @@
     border-bottom-right-radius: 100px 10px;
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
-    transform: rotate(5deg);
+    transform: rotate(9deg);
     transform-origin: 0%
 }
 .tape{
@@ -35,13 +35,13 @@
     top: 0;
 }
 .tape1{
-    transform: rotate(40deg);
+    transform: rotate(36deg);
     right: -70px;
-    top: -30px;
+    top: -60px;
 }
 .tape2{
-    transform: rotate(130deg);
-    left: -70px;
+    transform: rotate(126deg);
+    left: -75px;
 }
 .post-it p{
     font-family:'Architects Daughter';
