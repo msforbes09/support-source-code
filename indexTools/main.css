@@ -34,7 +34,35 @@ body{
     left: 2vw;
     opacity: 0.8;
 }
-
+.pumpkin{
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 50px;
+    height: 250px;
+    z-index: 2;
+}
+.web{
+    position: fixed;
+    display: none;
+    z-index: 2;
+}
+.web1{
+    top: 0;
+    right: 0;
+}
+.web2{
+    bottom: -50px;
+    left: 60%;
+}
+.web3{
+    top: -50px;
+    left: -50px;
+}
+.web4{
+    top: 200px;
+    left: 500px;
+}
 .overlay{
     width: 100%;
     height: 100vh;

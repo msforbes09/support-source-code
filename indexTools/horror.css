@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Architects Daughter');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Emilys Candy');
 @import url('https://fonts.googleapis.com/css?family=Creepster');
 
 *{
@@ -13,8 +13,8 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    font-family: 'Montserrat';
-    font-size: 20px;
+    font-family: 'Emilys Candy';
+    font-size: 22px;
 }
 .header {
     position: fixed;
@@ -27,7 +27,7 @@ body{
     background-position: right;
     background-size: auto 100%;
     display: flex;
-    filter: sepia(100%);
+    filter: grayscale(100%);
 }
 .snowman{
     max-height: 25vh;
@@ -37,42 +37,75 @@ body{
     opacity: 0.8;
     display: none;
 }
-
+.pumpkin{
+    position: fixed;
+    display: block;
+    bottom: 20px;
+    right: 50px;
+    height: 250px;
+    z-index: 2;
+}
+.web{
+    position: fixed;
+    display: block;
+    z-index: 2;
+}
+.web1{
+    top: 0;
+    right: 0;
+}
+.web2{
+    bottom: -50px;
+    left: 60%;
+}
+.web3{
+    top: -50px;
+    left: -50px;
+}
+.web4{
+    top: 200px;
+    left: 500px;
+}
 .overlay{
     width: 100%;
     height: 100vh;
-    background-color: #000000;
-    opacity: 0.3;
+    /*background-color: #000000;*/
+    background-image: radial-gradient(transparent, black);
+}
+.controls{
     color: #ff0000;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: absolute;
+    display: block;
+    bottom: 0;
     font-family: 'Creepster';
+    text-shadow: 1px 1px white;
 }
 .header-title{
     padding: 0 0 15px 50px;
-    font-size: 2.5em;
+    font-size: 3em;
     opacity: 1;
 }
 .header-sub-title{
     padding: 0 0 25px 50px;
-    font-size: 1.3em;
+    font-size: 1.8em;
 }
 .header-button{
     padding: 0 0 100px 50px;
 }
 #start{
+    font-family: 'Creepster';
     font-size: 1.6em;
     padding: 10px 50px 10px 50px;
-    border: 1px solid #ffffff;
+    border: 1px solid #ff0000;
+    text-shadow: 1px 1px white;
     background-color: transparent;
-    color: #ffffff;
+    color: #ff0000;
     border-radius: 10px;
     cursor: pointer;
 }
 #start:hover{
     color: #000000;
-    background-color: #ffffff; 
+    background-color: #ff0000; 
 }
 section{
     /*border: 1px solid red;*/
@@ -82,6 +115,7 @@ section{
     padding: 25px 0 25px 0;
 }
 main{
+    letter-spacing: 1px;
     background-color: #ffffff;
 }
 .content{
@@ -93,6 +127,8 @@ main{
 .title{
     font-size: 1.6em;
     line-height: 80px;
+    color: red;
+    text-shadow: 1px 1px gray;
 }
 .note{
     font-size: 0.8em;
@@ -127,7 +163,7 @@ a{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    font-size: 1.1em; 
+    font-size: 1.4em; 
     color: white;
     position: absolute;
     bottom: 0;
@@ -136,9 +172,13 @@ a{
     z-index: 2;
 }
 .nav [data-target]{
+    letter-spacing: 1px;
     line-height: 60px;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: red;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
 }
 .nav [data-target]:hover{
     transform: scale(1.1);
@@ -155,20 +195,18 @@ a{
     top: 40px;
     width: 400px;
     z-index: 2;
-    background: #ffffcc; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #ffffcc 81%, #ffffcc 82%, #ffffcc 82%, #ffffee 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffffcc), color-stop(82%,#ffffcc), color-stop(82%,#ffffcc), color-stop(100%,#ffffee)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* IE10+ */
-    background: linear-gradient(135deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffcc', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #eeeedd; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #eeeedd 81%, #eeeedd 82%, #eeeedd 82%, #ffffee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#eeeedd), color-stop(82%,#eeeedd), color-stop(82%,#eeeedd), color-stop(100%,#ffffee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* IE10+ */
+    background: linear-gradient(135deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeedd', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     border:1px solid #E8E8E8;
     border-bottom-right-radius: 100px 10px;
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
-    transform: rotate(9deg);
-    transform-origin: 0%
 }
 .tape{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
@@ -186,23 +224,24 @@ a{
     top: 0;
 }
 .tape1{
-    transform: rotate(36deg);
-    right: -70px;
-    top: -60px;
+    left: 110px;
+    top: -20px;
 }
 .tape2{
     transform: rotate(126deg);
     left: -75px;
+    display: none;
 }
 .post-it p{
     font-family:'Architects Daughter';
     font-size:22px;
     min-height: 32px;
     padding: 0 30px 0 30px;
+    color: #ff8800;
 }
 .post-it p:after{
     content: "";
-    background-color: #cce0ff;
+    background-color: #eee0ff;
     position: absolute;
     left: 0;
     width: 100%;
@@ -212,6 +251,6 @@ a{
 }
 .note-link{
     cursor: pointer;
-    color: #ff0000;
+    color: #ff8800;
     font-weight: bold;
 }
