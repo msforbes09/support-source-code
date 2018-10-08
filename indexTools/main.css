@@ -40,10 +40,12 @@ body{
     height: 100vh;
     background-color: #000000;
     opacity: 0.3;
+}
+.controls{
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    position: absolute;
+    display: block;
+    bottom: 0;
 }
 .header-title{
     padding: 0 0 15px 50px;

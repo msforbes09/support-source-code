@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Architects Daughter');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Creepster');
 
 *{
     padding: 0;
@@ -42,10 +43,11 @@ body{
     height: 100vh;
     background-color: #000000;
     opacity: 0.3;
-    color: red;
+    color: #ff0000;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    font-family: 'Creepster';
 }
 .header-title{
     padding: 0 0 15px 50px;
