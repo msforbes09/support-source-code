@@ -44,7 +44,7 @@ body{
     right: 50px;
     height: 250px;
     z-index: 2;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 .web{
     position: fixed;
@@ -137,7 +137,7 @@ main{
     font-style: italic;
 }
 #manual,#additional{
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #0A0A10;
     color: #ffffff;
 }
 a{

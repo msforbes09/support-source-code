@@ -1,5 +1,5 @@
 // const test = document.querySelector('#test');
-const header = document.querySelector('.header');
+const background = document.querySelector('.background');
 const nav = document.querySelector('.nav')
 const navY = nav.offsetTop;
 const main = document.querySelector('main');
@@ -8,7 +8,7 @@ const navKey = document.querySelectorAll('[data-target]');
 // change image during scrolls
 function setImage(){
 	const scrolled = window.scrollY;
-	const height = header.offsetHeight;
+	const height = background.offsetHeight;
 	let image;
 
 	scrolled >= navY ? nav.classList.add('fixed') : nav.classList.remove('fixed');
