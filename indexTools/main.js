@@ -1,4 +1,3 @@
-// const test = document.querySelector('#test');
 const background = document.querySelector('.background');
 const nav = document.querySelector('.nav')
 const navY = nav.offsetTop;

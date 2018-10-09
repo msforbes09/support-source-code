@@ -4,20 +4,20 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-:root {
-      --image: url('../image/cad3.jpg');
-    }
-html{
-    scroll-behavior: smooth;
-}
+html{ scroll-behavior: smooth }
 body{
     font-family: 'Montserrat';
     font-size: 20px;
 }
-.header {
+:root { --image: url('../image/cad3.jpg') }
+.layer2{ z-index: -2 }
+.layer1{ z-index: -1 }
+.layer0{ z-index: 0 }
+
+.background {
     position: fixed;
-    z-index: -1;
     width: 100%;
     height: 100vh;
     background: #ffffff;
@@ -25,65 +25,40 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     background-size: auto 100%;
-    display: flex;
 }
-.snowman{
-    max-height: 25vh;
+.image{
+    background-image: url(../image/sleigh.png);
+    background-repeat: no-repeat;
+    background-size: auto 250px;
     position: absolute;
     top: 8vh;
     left: 2vw;
-    opacity: 0.8;
+    width: 700px;
+    height: 300px; 
 }
-.pumpkin{
+.filter{
     position: fixed;
-    display: none;
-    bottom: 20px;
-    right: 50px;
-    height: 250px;
-    z-index: 2;
-}
-.web{
-    position: fixed;
-    display: none;
-    z-index: 2;
-}
-.web1{
-    top: 0;
-    right: 0;
-}
-.web2{
-    bottom: -50px;
-    left: 60%;
-}
-.web3{
-    top: -50px;
-    left: -50px;
-}
-.web4{
-    top: 200px;
-    left: 500px;
-}
-.overlay{
     width: 100%;
     height: 100vh;
     background-color: #000000;
     opacity: 0.3;
 }
-.controls{
-    color: white;
+/*header*/
+.header{
     position: absolute;
     display: block;
+    color: white;
     bottom: 0;
 }
-.header-title{
+.header .title{
     padding: 0 0 15px 50px;
     font-size: 2.5em;
 }
-.header-sub-title{
+.header .sub-title{
     padding: 0 0 25px 50px;
     font-size: 1.3em;
 }
-.header-button{
+.header .button{
     padding: 0 0 100px 50px;
 }
 #start{
@@ -99,56 +74,8 @@ body{
     color: #000000;
     background-color: #ffffff; 
 }
-section{
-    /*border: 1px solid red;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 0 25px 0;
-}
-main{
-    background-color: #ffffff;
-}
-.content{
-    line-height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.title{
-    font-size: 1.6em;
-    line-height: 80px;
-}
-.note{
-    font-size: 0.8em;
-    line-height: 60px;
-    font-style: italic;
-}
-#manual,#additional{
-    background-color: #0A0A10;
-    color: #ffffff;
-}
-a{
-    text-decoration: none;
-}
-#manual a,
-#additional a{
-    color: #ffffff;
-}
-#monitoring a,
-#report a{
-    color: #000000;
-}
-#monitoring a:hover,
-#report a:hover,
-#manual a:hover,
-#additional a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    color: red;
-}
+/*navigation bar*/
 .nav{
-    /*border: 1px solid red;*/
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -158,7 +85,6 @@ a{
     bottom: 0;
     background-color: #000000;
     opacity: 0.5;
-    z-index: 2;
 }
 .nav [data-target]{
     line-height: 60px;
@@ -174,12 +100,49 @@ a{
     bottom: auto;
     opacity: 1;
 }
+/*blank screen*/
+.blank{ height: 100vh; width: 100%; }
+/*main content*/
+main{
+    position: relative;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0 25px 0;
+}
+section:nth-child(even){ background-color: #ffffff; }
+section:nth-child(odd){ background-color: #0A0A10; }
+section:nth-child(even) *{ color: #000000; }
+section:nth-child(odd) *{ color: #ffffff; }
+section a{ text-decoration: none; }
+section a:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    color: red;
+}
+main .content{
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .title{
+    font-size: 1.6em;
+    line-height: 80px;
+}
+main .note{
+    font-size: 0.8em;
+    line-height: 60px;
+    font-style: italic;
+}
+/*psot it*/
 .post-it{
     position: absolute;
     right: 120px;
     top: 40px;
     width: 400px;
-    z-index: 2;
     background: #ffffcc; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #ffffcc 81%, #ffffcc 82%, #ffffcc 82%, #ffffee 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffffcc), color-stop(82%,#ffffcc), color-stop(82%,#ffffcc), color-stop(100%,#ffffee)); /* Chrome,Safari4+ */
@@ -188,11 +151,11 @@ a{
     background: -ms-linear-gradient(-45deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* IE10+ */
     background: linear-gradient(135deg, #ffffcc 81%,#ffffcc 82%,#ffffcc 82%,#ffffee 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffcc', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    border:1px solid #E8E8E8;
+    /*border:1px solid #E8E8E8;*/
     border-bottom-right-radius: 100px 10px;
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
-    transform: rotate(9deg);
+    transform: rotate(1deg);
     transform-origin: 0%
 }
 .tape{
@@ -206,17 +169,17 @@ a{
     border-left: dashed 1px rgba(0, 0, 0, 0.3);
     border-right: dashed 1px rgba(0, 0, 0, 0.3);
     width: 175px;
-    height: 40px;
+    height: 45px;
     position: absolute;
     top: 0;
 }
 .tape1{
-    transform: rotate(36deg);
-    right: -70px;
-    top: -60px;
+    transform: rotate(44deg);
+    right: -75px;
+    top: -1px;
 }
 .tape2{
-    transform: rotate(126deg);
+    transform: rotate(134deg);
     left: -75px;
 }
 .post-it p{

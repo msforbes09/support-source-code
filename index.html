@@ -8,48 +8,18 @@
     <link rel="stylesheet" href="indexTools/main.css">
 </head>
 <body>
-	<div class="post-it">
-		<div class="tape tape1"></div>
-		<div class="tape tape2"></div>
-		<p></p>
-		<p>Updates as of : <strong>October 2, 2018</strong></p>
-		<p></p>
-		<p>Some links has been added:</p>
-		<p>--Google Translate</p>
-		<p>--Data Bank</p>
-		<p>--Fire Storage</p>
-		<p>You can view it <span class="note-link" data-target="additional">here</span>.</p>
-		<p></p>
-		<p>Some pdf has been modified:</p>
-		<p>--DP & EP (Updated)</p>
-		<p>You can view it <span class="note-link" data-target="manual">here</span>.</p>
-		<p></p>
-	</div>
-	<div class="header">
-		<img class="snowman" src="image/sleigh.png">
-	</div>
-	<img class="pumpkin" src="image/pumpkin.png">
-	<img class="web web1" src="image/web1.svg">
-	<img class="web web2" src="image/web2.svg">
-	<img class="web web3" src="image/web3.svg">
-	<img class="web web4" src="image/web4.svg">
-	<div id="home" class="overlay">
-	</div>
-	<div class="controls">
-		<div class="header-title">Revision Department</div>
-		<div class="header-sub-title">Shortcuts and Links</div>
-		<div class="header-button">
-			<input type="button" id="start" data-target="monitoring" value="Get Started">
-		</div>
-	</div>
-	<nav class="nav">
-		<div data-target="home">Home</div>
-		<div data-target="monitoring">Monitoring</div>
-		<div data-target="manual">Manual</div>
-		<div data-target="report">Report</div>
-		<div data-target="additional">Additional</div>
-	</nav>
+	<!-- background -->
+<div class="layer2">
+	<div class="background"></div>
+	<div class="image"></div>
+</div>
+<div class="layer1">
+	<div class="filter"></div>
+</div>
+<div class="layer0">
+	<!-- main content -->
 	<main>
+		<div id="home" class="blank"></div>
 		<section id="monitoring">
 			<div class="title">Monitoring</div>
 			<div class="content">
@@ -86,14 +56,45 @@
 				<a href="https://translate.google.com/" target="_blank">Google Translate</a>
 				<a href="https://www.databank-solution.net/" target="_blank">Data Bank</a>
 				<a href="http://firestorage.jp/" target="_blank">Fire Storage</a>
-				<!-- <p>Sample Link</p>
-				<p>Sample Link</p> -->
 			</div>
 			<div class="note">*Your suggested links and shortcuts will be here...</div>
 		</section>
+		<div class="blank"></div>
 	</main>
-	<div class="overlay"></div>
-	
+	<!-- controls -->
+	<div class="header">
+		<div class="title">Revision Department</div>
+		<div class="sub-title">Shortcuts and Links</div>
+		<div class="button">
+			<input type="button" id="start" data-target="monitoring" value="Get Started">
+		</div>
+	</div>
+	<nav class="nav">
+		<div data-target="home">Home</div>
+		<div data-target="monitoring">Monitoring</div>
+		<div data-target="manual">Manual</div>
+		<div data-target="report">Report</div>
+		<div data-target="additional">Additional</div>
+	</nav>
+	<div class="post-it">
+		<div class="tape tape1"></div>
+		<div class="tape tape2"></div>
+		<p></p>
+		<p>Updates as of : <strong>October 2, 2018</strong></p>
+		<p></p>
+		<p>Some links has been added:</p>
+		<p>--Google Translate</p>
+		<p>--Data Bank</p>
+		<p>--Fire Storage</p>
+		<p>You can view it <span class="note-link" data-target="additional">here</span>.</p>
+		<p></p>
+		<p>Some pdf has been modified:</p>
+		<p>--DP & EP (Updated)</p>
+		<p>You can view it <span class="note-link" data-target="manual">here</span>.</p>
+		<p></p>
+	</div>
+</div>
+
 
 <script type="text/javascript" src="indexTools/main.js"></script>
 <script type="text/javascript" src="indexTools/snowstorm.js"></script>
