@@ -11,8 +11,8 @@ function setImage(){
 	let image;
 
 	scrolled >= navY ? nav.classList.add('fixed') : nav.classList.remove('fixed');
-	scrolled > height ? image = 'url(\'../image/cad1.jpg\')' : image = 'url(\'../image/cad3.jpg\')';
-	document.documentElement.style.setProperty('--image', image);
+	//scrolled > height ? image = 'url(\'../image/cad1.jpg\')' : image = 'url(\'../image/cad3.jpg\')';
+	// document.documentElement.style.setProperty('--image', image);
 }
 
 function navigate(){

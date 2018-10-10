@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    outline: none;
 }
 html{ scroll-behavior: smooth }
 body{
@@ -25,16 +26,6 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     background-size: auto 100%;
-}
-.image{
-    background-image: url(../image/sleigh.png);
-    background-repeat: no-repeat;
-    background-size: auto 250px;
-    position: absolute;
-    top: 8vh;
-    left: 2vw;
-    width: 700px;
-    height: 300px; 
 }
 .filter{
     position: fixed;
@@ -137,7 +128,7 @@ main .note{
     line-height: 60px;
     font-style: italic;
 }
-/*psot it*/
+/*post it*/
 .post-it{
     position: absolute;
     right: 120px;
@@ -202,4 +193,15 @@ main .note{
     cursor: pointer;
     color: #ff0000;
     font-weight: bold;
+}
+/*additional design*/
+.image{
+    background-image: url(../image/sleigh.png);
+    background-repeat: no-repeat;
+    background-size: auto 250px;
+    position: absolute;
+    top: 8vh;
+    left: 2vw;
+    width: 700px;
+    height: 300px; 
 }

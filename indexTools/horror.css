@@ -5,20 +5,21 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    outline: none;
 }
-:root {
-      --image: url('../image/cad3.jpg');
-    }
-html{
-    scroll-behavior: smooth;
-}
+html{ scroll-behavior: smooth }
 body{
     font-family: 'Emilys Candy';
-    font-size: 22px;
+    font-size: 20px;
 }
-.header {
+:root { --image: url('../image/cad1.jpg') }
+.layer2{ z-index: -2 }
+.layer1{ z-index: -1 }
+.layer0{ z-index: 0 }
+
+.background {
     position: fixed;
-    z-index: -1;
     width: 100%;
     height: 100vh;
     background: #ffffff;
@@ -26,71 +27,32 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     background-size: auto 100%;
-    display: flex;
-    filter: grayscale(100%);
 }
-.snowman{
-    max-height: 25vh;
-    position: absolute;
-    top: 8vh;
-    left: 2vw;
-    opacity: 0.8;
-    display: none;
-}
-.pumpkin{
+.filter{
     position: fixed;
-    display: block;
-    bottom: 20px;
-    right: 50px;
-    height: 250px;
-    z-index: 2;
-    opacity: 0.8;
-}
-.web{
-    position: fixed;
-    display: block;
-    z-index: 2;
-}
-.web1{
-    top: -100px;
-    right: -100px;
-}
-.web2{
-    bottom: -50px;
-    left: 60%;
-}
-.web3{
-    top: -50px;
-    left: -50px;
-}
-.web4{
-    top: 200px;
-    left: 500px;
-}
-.overlay{
     width: 100%;
     height: 100vh;
-    /*background-color: #000000;*/
-    background-image: radial-gradient(transparent, black);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black);
 }
-.controls{
-    color: #ff0000;
+/*header*/
+.header{
     position: absolute;
     display: block;
     bottom: 0;
     font-family: 'Creepster';
     text-shadow: 1px 1px white;
+    color: #ff0000;
+    letter-spacing: 5px;
 }
-.header-title{
+.header .title{
     padding: 0 0 15px 50px;
     font-size: 3em;
-    opacity: 1;
 }
-.header-sub-title{
+.header .sub-title{
     padding: 0 0 25px 50px;
     font-size: 1.8em;
 }
-.header-button{
+.header .button{
     padding: 0 0 100px 50px;
 }
 #start{
@@ -108,59 +70,8 @@ body{
     color: #000000;
     background-color: #ff0000; 
 }
-section{
-    /*border: 1px solid red;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 0 25px 0;
-}
-main{
-    letter-spacing: 1px;
-    background-color: #ffffff;
-}
-.content{
-    line-height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.title{
-    font-size: 1.6em;
-    line-height: 80px;
-    color: red;
-    text-shadow: 1px 1px gray;
-}
-.note{
-    font-size: 0.8em;
-    line-height: 60px;
-    font-style: italic;
-}
-#manual,#additional{
-    background-color: #0A0A10;
-    color: #ffffff;
-}
-a{
-    text-decoration: none;
-}
-#manual a,
-#additional a{
-    color: #ffffff;
-}
-#monitoring a,
-#report a{
-    color: #000000;
-}
-#monitoring a:hover,
-#report a:hover,
-#manual a:hover,
-#additional a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    color: red;
-}
+/*navigation bar*/
 .nav{
-    /*border: 1px solid red;*/
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -169,11 +80,10 @@ a{
     position: absolute;
     bottom: 0;
     background-color: #000000;
-    opacity: 0.5;
-    z-index: 2;
+    opacity: 0.8;
+    letter-spacing: 2px;
 }
 .nav [data-target]{
-    letter-spacing: 1px;
     line-height: 60px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -190,6 +100,49 @@ a{
     bottom: auto;
     opacity: 1;
 }
+/*blank screen*/
+.blank{ height: 100vh; width: 100%; }
+/*main content*/
+main{
+    position: relative;
+    letter-spacing: 3px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0 25px 0;
+}
+section:nth-child(even){ background-color: rgba(255, 255, 255, 0.3); }
+section:nth-child(odd){ background-color: rgba(0, 0, 0, 0.3); }
+section:nth-child(even) *{ color: #000000;}
+section:nth-child(odd) *{ color: #ffffff; }
+section a{ text-decoration: none; text-shadow: 1px 1px red; }
+section a:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    color: red;
+    text-shadow: 1px 1px #000000;
+}
+main .content{
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+}
+main .title{
+    font-size: 1.6em;
+    line-height: 80px;
+    color: red;
+    text-shadow: 2px 1px #000000;
+}
+main .note{
+    font-size: 0.8em;
+    line-height: 60px;
+    font-style: italic;
+}
+/*post it*/
 .post-it{
     position: absolute;
     right: 120px;
@@ -204,10 +157,27 @@ a{
     background: -ms-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* IE10+ */
     background: linear-gradient(135deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeedd', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    border:1px solid #E8E8E8;
+    /*border:1px solid #E8E8E8;*/
     border-bottom-right-radius: 100px 10px;
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
+    transform: rotate(1deg);
+    transform-origin: 0%
+}
+.tape{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)), color-stop(0.3, rgba(0, 0, 0, 0.4)));
+    background: -moz-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -ms-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    border-left: dashed 1px rgba(0, 0, 0, 0.3);
+    border-right: dashed 1px rgba(0, 0, 0, 0.3);
+    width: 175px;
+    height: 45px;
+    position: absolute;
+    top: 0;
 }
 .tape{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
@@ -238,7 +208,7 @@ a{
     font-size:22px;
     min-height: 32px;
     padding: 0 30px 0 30px;
-    color: #ff8800;
+    color: #ff2200;
 }
 .post-it p:after{
     content: "";
@@ -252,6 +222,37 @@ a{
 }
 .note-link{
     cursor: pointer;
-    color: #ff8800;
+    color: #ff2200;
     font-weight: bold;
 }
+/*
+.pumpkin{
+    position: fixed;
+    display: block;
+    bottom: 20px;
+    right: 50px;
+    height: 250px;
+    z-index: 2;
+    opacity: 0.8;
+}
+.web{
+    position: fixed;
+    display: block;
+    z-index: 2;
+}
+.web1{
+    top: -100px;
+    right: -100px;
+}
+.web2{
+    bottom: -50px;
+    left: 60%;
+}
+.web3{
+    top: -50px;
+    left: -50px;
+}
+.web4{
+    top: 200px;
+    left: 500px;
+}*/
