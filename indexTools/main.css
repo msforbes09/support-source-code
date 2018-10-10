@@ -189,6 +189,10 @@ main .note{
     transform: translateY(24px);
     z-index: -1;
 }
+.post-it a{
+    text-decoration: none;
+    font-weight: bold;
+}
 .note-link{
     cursor: pointer;
     color: #ff0000;

@@ -65,6 +65,7 @@ body{
     color: #ff0000;
     border-radius: 10px;
     cursor: pointer;
+    letter-spacing: 5px;
 }
 #start:hover{
     color: #000000;
@@ -135,7 +136,9 @@ main .title{
     font-size: 1.6em;
     line-height: 80px;
     color: red;
-    text-shadow: 2px 1px #000000;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px #ffffff;
+    padding: 0 80px 0 50px;
 }
 main .note{
     font-size: 0.8em;
@@ -225,20 +228,21 @@ main .note{
     color: #ff2200;
     font-weight: bold;
 }
-/*
-.pumpkin{
+/*additional design*/
+.image{
+    background-image: url(../image/pumpkin.png);
+    background-repeat: no-repeat;
+    background-size: auto 300px;
     position: fixed;
-    display: block;
-    bottom: 20px;
-    right: 50px;
-    height: 250px;
-    z-index: 2;
-    opacity: 0.8;
+    bottom: 8vh;
+    right: 10vw;
+    width: 300px;
+    height: 300px; 
 }
+
 .web{
     position: fixed;
     display: block;
-    z-index: 2;
 }
 .web1{
     top: -100px;
@@ -246,13 +250,13 @@ main .note{
 }
 .web2{
     bottom: -50px;
-    left: 60%;
+    left: 80%;
 }
 .web3{
     top: -50px;
     left: -50px;
 }
 .web4{
-    top: 200px;
-    left: 500px;
-}*/
+    bottom: 250px;
+    left: 400px;
+}
