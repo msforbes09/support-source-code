@@ -160,11 +160,12 @@ section:nth-child(odd){ background-color: rgba(0, 0, 0, 0.3); }
 section:nth-child(even) *{ color: #000000;}
 section:nth-child(odd) *{ color: #ffffff; }
 section a{ text-decoration: none; text-shadow: 1px 1px red; }
+section:nth-child(even) a:hover{ text-shadow: 1px 1px #000000;}
+section:nth-child(odd) a:hover{ text-shadow: 0.5px 0.5px #ffffff; }
 section a:hover{
     transform: scale(1.1);
     transition: all 0.8s linear;
     color: #ff0000;
-    text-shadow: 0.5px 0.5px #ffffff;
 }
 main .content{
     line-height: 50px;
