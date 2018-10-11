@@ -79,7 +79,7 @@ body{
     50% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); left: 15px}
     55% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 0}
     56% {text-shadow: 0 0 5px #212121; left: 0}
-    57% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 30pxs}
+    57% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 30px}
     60% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: 0}
     65% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0}
     70% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); left: -15px}
@@ -273,16 +273,25 @@ main .note{
 }
 /*additional design*/
 .image{
-    background-image: url(../image/pumpkin.png);
+    background-image: url(../image/ghost.png);
     background-repeat: no-repeat;
     background-size: auto 300px;
     position: fixed;
-    bottom: 8vh;
-    right: 10vw;
-    width: 300px;
-    height: 300px; 
-}
+    right: 10vw; bottom: 5vh;
+    width: 150px;
+    height: 300px;
+    opacity: 1;
+    animation: ghost-animation 15s infinite;
+    /*z-index: 3;*/
 
+    /*border: 1px solid red*/
+}
+@keyframes ghost-animation {
+    89% {z-index: 0; transform: scale(1);}
+    90% {z-index: 2; transform: scale(3);}
+    100% {z-index: 2; transform: scale(1.5);}
+     
+}
 .web{
     position: fixed;
     display: block;
