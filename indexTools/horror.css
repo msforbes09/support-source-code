@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Architects Daughter');
+/*@import url('https://fonts.googleapis.com/css?family=Architects Daughter');*/
 @import url('https://fonts.googleapis.com/css?family=Emilys Candy');
 @import url('https://fonts.googleapis.com/css?family=Creepster');
+@import url('https://fonts.googleapis.com/css?family=Denk One');
 
 *{
     padding: 0;
@@ -13,7 +14,7 @@ body{
     font-family: 'Emilys Candy';
     font-size: 20px;
 }
-:root { --image: url('../image/cad1.jpg') }
+:root { --image: url('../image/horror-house.jpg') }
 .layer2{ z-index: -2 }
 .layer1{ z-index: -1 }
 .layer0{ z-index: 0 }
@@ -26,35 +27,74 @@ body{
     background-image: var(--image);
     background-repeat: no-repeat;
     background-position: right;
-    background-size: auto 100%;
+    background-size: cover;
 }
 .filter{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3), black);
+    background-image: radial-gradient(transparent, black);
 }
 /*header*/
 .header{
     position: absolute;
     display: block;
     bottom: 0;
-    font-family: 'Creepster';
-    text-shadow: 1px 1px white;
-    color: #ff0000;
-    letter-spacing: 5px;
+    color: transparent;
 }
 .header .title{
+    font-family: 'Denk One';
+    font-size: 4em;
+    letter-spacing: 10px;
+    position: relative;
     padding: 0 0 15px 50px;
-    font-size: 3em;
+    animation: horror-animation 5s infinite;
 }
 .header .sub-title{
+    font-family: 'Creepster';
+    letter-spacing: 5px;
     padding: 0 0 25px 50px;
     font-size: 1.8em;
+    color: rgba(255, 0, 0, 0.5);
 }
 .header .button{
     padding: 0 0 100px 50px;
 }
+
+@keyframes horror-animation {
+    0% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.1); left: 15px; transform: translateY(10px);}
+    5% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: 0; transform: translateY(-10px);}
+    10% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); left: -15px; transform: translateY(-10px);}
+    15% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0; transform: translateY(10px);}
+    16% {text-shadow: 0 0 5px #212121; left: 0}
+    17% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0;}
+    20% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: -15px}
+    25% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: -15px}
+    30% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); left: 0}
+    35% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 0}
+    36% {text-shadow: 0 0 5px #212121; left: 0}
+    37% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 0}
+    40% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.9); left: 15px}
+    45% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 15px}
+    50% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); left: 15px}
+    55% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 0}
+    56% {text-shadow: 0 0 5px #212121; left: 0}
+    57% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 30pxs}
+    60% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: 0}
+    65% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0}
+    70% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); left: -15px}
+    75% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: -15px}
+    76% {text-shadow: 0 0 5px #212121; left: 0}
+    77% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: -15px}
+    80% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.1); left: -15px}
+    85% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); left: 15px}
+    86% {text-shadow: 0 0 5px #212121; left: 0}
+    87% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); left: 15px}
+    90% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.3); left: 15px}
+    95% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 15px} 
+    100% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: 0} 
+}
+
 #start{
     font-family: 'Creepster';
     font-size: 1.6em;
@@ -66,6 +106,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
     letter-spacing: 5px;
+    transition: all 2s linear;
 }
 #start:hover{
     color: #000000;
@@ -87,7 +128,7 @@ body{
 .nav [data-target]{
     line-height: 60px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.8s linear;
     color: red;
     font-weight: bold;
     text-shadow: 1px 1px white;
@@ -121,9 +162,9 @@ section:nth-child(odd) *{ color: #ffffff; }
 section a{ text-decoration: none; text-shadow: 1px 1px red; }
 section a:hover{
     transform: scale(1.1);
-    transition: all 0.3s ease;
-    color: red;
-    text-shadow: 1px 1px #000000;
+    transition: all 0.8s linear;
+    color: #ff0000;
+    text-shadow: 0.5px 0.5px #ffffff;
 }
 main .content{
     line-height: 50px;
@@ -165,7 +206,8 @@ main .note{
     box-shadow: 2px 2px 5px 0 #444444;
     padding: 50px 0 10px 0;
     transform: rotate(1deg);
-    transform-origin: 0%
+    transform-origin: 0%;
+    display: none; 
 }
 .tape{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
