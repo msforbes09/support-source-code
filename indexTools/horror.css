@@ -277,21 +277,22 @@ main .note{
     background-repeat: no-repeat;
     background-size: auto 300px;
     position: fixed;
-    right: 10vw; bottom: 5vh;
+    right: 60px; bottom: 50px;
     width: 150px;
     height: 300px;
-    opacity: 1;
-    animation: ghost-animation 15s infinite;
-    /*z-index: 3;*/
-
-    /*border: 1px solid red*/
+    /*animation: ghost-animation 15s infinite;*/
 }
-@keyframes ghost-animation {
+.ghostShow{
+    z-index: 3;
+}
+.ghostBlink{
+    display: none;
+}
+/*@keyframes ghost-animation {
     69% {z-index: 0; transform: scale(1);}
     70% {z-index: 2; transform: scale(3);}
     85% {z-index: 2; transform: scale(3);}
-     
-}
+}*/
 .web{
     position: fixed;
     display: block;
