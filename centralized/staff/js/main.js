@@ -1,9 +1,11 @@
+const staffTable = document.querySelector('#staff-table');
 const modalTitle = document.querySelector('.modal-title');
 const form = document.querySelector('.modal-body');
 const addStaff = document.querySelector('#staff-add');
 
 //handle form events
 function formEvent(e){
+	e.preventDefault();
 	const formId = e.target.getAttribute('id');
 	switch(formId){
 		case 'new-staff-input':
@@ -29,14 +31,35 @@ function saveNewStaff(){
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewStaff.php',
-		error: () => alert("Something went wrong!"),
 		success: () => {
 			$('.modal').modal('hide');
+			getStaffList();
 		},
+		error: (e) => alert(e.statusText),
 		data: {idNum, firstName, middleName, lastName ,nickName}
 	})
-	// console.log(idNum, firstName, middleName, lastName ,nickName);
+}
+
+function getStaffList(){
+	$.ajax({
+		type: "post",
+		url: 'db/getStaffList.php',
+		dataType: "json",
+		error: (e) => alert(e.statusText),
+		success: (data) => {
+			const staffList = data.map((list, index) => {
+				return `<tr>
+					<td>${index + 1}</td>
+					<td>${list.idNum}</td>
+					<td>${list.fullName}</td>
+					<td>${list.nickName}</td>
+				</tr>`;
+			}).join('');
+			staffTable.innerHTML = staffList;
+		}
+	})
 }
 
 form.addEventListener('submit', formEvent);
 addStaff.addEventListener('click', showAddForm);
+document.addEventListener('DOMContentLoaded', getStaffList);
