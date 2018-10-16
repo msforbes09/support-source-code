@@ -1,5 +1,5 @@
 <?php
-require_once '../../config.php';
+require_once '../../tools/config.php';
 $staff = $_REQUEST;
 try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );

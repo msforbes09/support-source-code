@@ -6,8 +6,7 @@ try {
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	$stmt = $pdo->prepare(
-		"SELECT staffId, idNum, concat(firstName, ' ', lastName) as fullName, nickName
-		FROM staff ORDER BY staffId;"
+		"SELECT * FROM department ORDER BY deptId;"
 	);
 	$stmt->execute();
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);

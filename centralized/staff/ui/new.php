@@ -40,6 +40,12 @@
 		</div>
 	</div>
 	<hr>
-	<input type="submit" class="btn btn-primary" value="Save">
-	<input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
+	<div class="row">
+		<div class="col-lg-6">
+			<input type="submit" class="btn btn-primary btn-block" value="Save">
+		</div>
+		<div class="col-lg-6">
+			<input type="button" class="btn btn-default btn-block" data-dismiss="modal" value="Close">
+		</div>
+	</div>
 </form>

@@ -35,7 +35,7 @@ function saveNewStaff(){
 			$('.modal').modal('hide');
 			getStaffList();
 		},
-		error: (e) => alert(e.statusText),
+		error: (e) => alert(e.responseText),
 		data: {idNum, firstName, middleName, lastName ,nickName}
 	})
 }
@@ -45,7 +45,7 @@ function getStaffList(){
 		type: "post",
 		url: 'db/getStaffList.php',
 		dataType: "json",
-		error: (e) => alert(e.statusText),
+		error: (e) => alert(e.responseText),
 		success: (data) => {
 			const staffList = data.map((list, index) => {
 				return `<tr>
