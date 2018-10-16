@@ -1,7 +1,7 @@
 <?php 
 	//db connection
 	$hostname = 'localhost';
-	$dbname = 'fitsupport';
+	$dbname = 'fit_support';
 	$username = 'root';
 	$password = 'support';
 ?>
