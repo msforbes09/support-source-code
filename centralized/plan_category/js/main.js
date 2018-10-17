@@ -1,44 +1,49 @@
-const addProcess = document.querySelector('#process-add');
+const addPlanCategory = document.querySelector('#plan-category-add');
 const modalTitle = document.querySelector('.modal-title');
 const form = document.querySelector('.modal-body');
-const processTable = document.querySelector('#process-table');
+// const processTable = document.querySelector('#process-table');
 
 //handle form events
 function formEvent(e){
 	e.preventDefault();
 	const formId = e.target.getAttribute('id');
 
+	// console.log(formId);
 	switch(formId){
-		case 'new-process-input':
-		saveNewProcess();
+		case 'new-plan-category-input':
+			// console.log('ok');
+			saveNewPlanCategory();
 			break;
 	}
 }
 
-function saveNewProcess(){
+function saveNewPlanCategory(){
 	const dept = document.querySelector('#select-dept').value;
-	const process = document.querySelector('#text-process').value;
+	const categoryDesc = document.querySelector('#text-plan-category').value;
+	const categoryPoint = parseInt(document.querySelector('#text-category-point').value);
+	// console.log(dept, categoryDesc, categoryPoint);
 	// set validation here
 
+	// return;
 	$.ajax({
 		type: "post",
-		url: 'db/saveNewProcess.php',
+		url: 'db/saveNewPlanCategory.php',
 		success: (e) => {
 			$('.modal').modal('hide');
-			getProcessList();
+			// getProcessList();
 		},
 		error: (e) => alert(e.responseText),
-		data: {dept, process}
+		data: {dept, categoryDesc, categoryPoint}
 	})
 }
 
-function showAddProcessForm(){
+function showAddPlanCategoryForm(){
 	$('.modal-body').load('ui/new.php');
 	$('.modal').modal('show');
-	modalTitle.textContent = 'New Process';
+	modalTitle.textContent = 'New Plan Category';
 }
 
-function getProcessList(){
+function getPlanCategoryList(){
 	$.ajax({
 		type: "post",
 		url: 'db/getProcessList.php',
@@ -57,6 +62,6 @@ function getProcessList(){
 	})
 }
 
-addProcess.addEventListener('click', showAddProcessForm)
+addPlanCategory.addEventListener('click', showAddPlanCategoryForm)
 form.addEventListener('submit', formEvent);
-document.addEventListener('DOMContentLoaded', getProcessList);
+document.addEventListener('DOMContentLoaded', getPlanCategoryList);

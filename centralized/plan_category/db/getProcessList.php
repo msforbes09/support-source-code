@@ -1,16 +1,20 @@
 <?php
 require_once '../../tools/config.php';
-$dept = $_REQUEST;
+
 try {
 	$pdo = new PDO( 'mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8;', $username, $password );
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	$stmt = $pdo->prepare(
-		"INSERT INTO department(deptName)
-		VALUES (:deptName);"
+		"SELECT p.procName AS procName, d.deptName AS deptName 
+		FROM process p
+		JOIN department d
+		ON d.deptId = p.deptId
+		ORDER BY p.procId;"
 	);
-	$stmt->bindValue(':deptName', $dept["dept"], PDO::PARAM_STR);
 	$stmt->execute();
+	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	print json_encode($data);
 
 } catch ( PDOException $e ) {
 	echo $e->getMessage();

@@ -1,4 +1,4 @@
-<form id="new-process-input">
+<form id="new-plan-category-input">
 	<div class="row">
 		<div class="col-lg-4">
 			<label for="text-process">Department:</label>
@@ -12,10 +12,18 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-process">Process:</label>
+			<label for="text-process">Plan Category:</label>
 		</div>
 		<div class="col-lg-8">
-			<input type="text" id="text-process" class="form-control" placeholder="type new process here..." required>
+			<input type="text" id="text-plan-category" class="form-control" placeholder="type category description here..." required>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<label for="text-process">Coefficient:</label>
+		</div>
+		<div class="col-lg-8">
+			<input type="number" id="text-category-point" class="form-control" placeholder="type category point here..." min="0" max="10" required>
 		</div>
 	</div>
 	<hr>

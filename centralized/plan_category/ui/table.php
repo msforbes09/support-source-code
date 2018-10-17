@@ -3,8 +3,9 @@
 		<tr>
 			<th>No.</th>
 			<th>Department</th>
-			<th>Process</th>
+			<th>Category</th>
+			<th>Point</th>
 		</tr>
 	</thead>
-	<tbody id="process-table"></tbody>
+	<tbody id="plan-category-table"></tbody>
 </table>
