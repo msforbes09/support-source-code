@@ -26,6 +26,7 @@ function saveNewStaff(){
 	const middleName = document.querySelector('#text-middle-name').value;
 	const lastName = document.querySelector('#text-last-name').value;
 	const nickName = document.querySelector('#text-nick-name').value;
+	const dept = document.querySelector('#select-dept').value;
 	// set validation here
 
 	$.ajax({
@@ -36,7 +37,7 @@ function saveNewStaff(){
 			getStaffList();
 		},
 		error: (e) => alert(e.responseText),
-		data: {idNum, firstName, middleName, lastName ,nickName}
+		data: {idNum, firstName, middleName, lastName ,nickName, dept}
 	})
 }
 
@@ -53,6 +54,7 @@ function getStaffList(){
 					<td>${list.idNum}</td>
 					<td>${list.fullName}</td>
 					<td>${list.nickName}</td>
+					<td>${list.deptName}</td>
 				</tr>`;
 			}).join('');
 			staffTable.innerHTML = staffList;

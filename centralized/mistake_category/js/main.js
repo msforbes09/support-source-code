@@ -19,7 +19,8 @@ function formEvent(e){
 
 function saveNewMistakeCategory(){
 	const dept = document.querySelector('#select-dept').value;
-	const mistakeDesc = document.querySelector('#text-mistake-category').value;
+	const mistakeCategory = document.querySelector('#text-mistake-category').value;
+	const mistakeDesc = document.querySelector('#text-mistake-description').value;
 	const mistakePoint = parseFloat(document.querySelector('#text-category-point').value);
 	// console.log(dept, mistakeDesc, mistakePoint);
 	// set validation here
@@ -33,7 +34,7 @@ function saveNewMistakeCategory(){
 			getMistakeCategoryList()
 		},
 		error: (e) => alert(e.responseText),
-		data: {dept, mistakeDesc, mistakePoint}
+		data: {dept, mistakeCategory, mistakeDesc, mistakePoint}
 	})
 }
 
@@ -54,6 +55,7 @@ function getMistakeCategoryList(){
 				return `<tr>
 					<td>${index + 1}</td>
 					<td>${list.deptName}</td>
+					<td>${list.mistakeCategory}</td>
 					<td>${list.mistakeDesc}</td>
 					<td>${list.mistakePoint}</td>
 				</tr>`;

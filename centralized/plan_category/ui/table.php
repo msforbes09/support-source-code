@@ -1,5 +1,5 @@
-<table class="table table-bordered table-striped table-hover">
-	<thead class="bg-primary">
+<table class="table table-bordered table-hover">
+	<thead>
 		<tr>
 			<th>No.</th>
 			<th>Department</th>

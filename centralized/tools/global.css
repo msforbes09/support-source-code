@@ -1,0 +1,16 @@
+body{
+	background-color: #F5FFFA;
+}
+.dash-board{
+	width: 800px;
+	min-width: 800px;
+	margin: auto;
+	margin-top: calc(50vh - 360px);
+	box-shadow: 0 0 10px 0 #000000;
+}
+.panel-body{
+	height: 600px;
+	min-height: 600px;
+	overflow-y: auto;
+}
+select:invalid { color: #999999; }

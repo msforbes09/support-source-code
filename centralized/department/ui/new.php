@@ -1,5 +1,5 @@
 <form id="new-dept-input">
-	<input type="text" id="text-dept" class="form-control input-lg" placeholder="type new department here..." required>
+	<input type="text" id="text-dept" class="form-control input-lg" placeholder="type new department here... (ex: Revision)" required>
 	<hr>
 	<div class="row">
 		<div class="col-lg-6">

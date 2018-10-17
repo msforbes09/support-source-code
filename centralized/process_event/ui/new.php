@@ -1,4 +1,4 @@
-<form id="new-plan-category-input">
+<form id="new-process-event-input">
 	<div class="row">
 		<div class="col-lg-4">
 			<label for="select-dept">Department:</label>
@@ -12,24 +12,16 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-plan-category">Plan Category:</label>
+			<label for="text-process-event">Process Event:</label>
 		</div>
 		<div class="col-lg-8">
-			<input type="text" id="text-plan-category" class="form-control" placeholder="ex: &quot;Basic A&quot;, &quot;Revision D&quot;" required>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-4">
-			<label for="text-category-point">Coefficient:</label>
-		</div>
-		<div class="col-lg-8">
-			<input type="number" id="text-category-point" class="form-control" placeholder="ex: &quot;1&quot;, &quot;8&quot;" min="0" max="10" required>
+			<input type="text" id="text-process-event" class="form-control" placeholder="type new event here... (ex: &quot;start&quot;, &quot;finish&quot;)" required>
 		</div>
 	</div>
 	<hr>
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="submit" class="btn btn-success btn-block" value="Save">
+			<input type="submit" class="btn btn-info btn-block" value="Save">
 		</div>
 		<div class="col-lg-6">
 			<input type="button" class="btn btn-default btn-block" data-dismiss="modal" value="Close">

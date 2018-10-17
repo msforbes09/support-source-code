@@ -6,10 +6,11 @@ try {
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		
 	$stmt = $pdo->prepare(
-		"INSERT INTO mistake_category(deptId, mistakeDesc, mistakePoint)
-		VALUES(:dept, :mistakeDesc, :mistakePoint);"
+		"INSERT INTO mistake_category(deptId, mistakeCategory, mistakeDesc, mistakePoint)
+		VALUES(:dept, :mistakeCategory, :mistakeDesc, :mistakePoint);"
 	);
 	$stmt->bindValue(':dept', $mistakeCategory["dept"], PDO::PARAM_INT);
+	$stmt->bindValue(':mistakeCategory', $mistakeCategory["mistakeCategory"], PDO::PARAM_STR);
 	$stmt->bindValue(':mistakeDesc', $mistakeCategory["mistakeDesc"], PDO::PARAM_STR);
 	$stmt->bindValue(':mistakePoint', $mistakeCategory["mistakePoint"], PDO::PARAM_STR);
 	$stmt->execute();

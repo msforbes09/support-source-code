@@ -2,11 +2,9 @@
 	<thead>
 		<tr>
 			<th>No.</th>
-			<th>Id No.</th>
-			<th>Full Name</th>
-			<th>Nick Name</th>
 			<th>Department</th>
+			<th>Event</th>
 		</tr>
 	</thead>
-	<tbody id="staff-table"></tbody>
+	<tbody id="process-event-table"></tbody>
 </table>
