@@ -3,9 +3,9 @@
 		<tr>
 			<th>No.</th>
 			<th>Department</th>
-			<th>Mistake</th>
+			<th>Category</th>
 			<th>Point</th>
 		</tr>
 	</thead>
-	<tbody id="plan-category-table"></tbody>
+	<tbody id="mistake-category-table"></tbody>
 </table>

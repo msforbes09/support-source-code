@@ -1,7 +1,7 @@
-<form id="new-plan-category-input">
+<form id="new-mistake-category-input">
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-process">Department:</label>
+			<label for="select-dept">Department:</label>
 		</div>
 		<div class="col-lg-8">
 			<select id="select-dept" class="form-control" required>
@@ -12,18 +12,18 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-process">Plan Category:</label>
+			<label for="text-mistake-category">Mistakes Category:</label>
 		</div>
 		<div class="col-lg-8">
-			<input type="text" id="text-plan-category" class="form-control" placeholder="type category description here..." required>
+			<input type="text" id="text-mistake-category" class="form-control" placeholder="type category description here..." required>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-process">Coefficient:</label>
+			<label for="text-category-point">Coefficient:</label>
 		</div>
 		<div class="col-lg-8">
-			<input type="number" id="text-category-point" class="form-control" placeholder="type category point here..." min="0" max="10" required>
+			<input type="number" id="text-category-point" class="form-control" placeholder="type category point here..." min="0" max="10" step="0.1" required>
 		</div>
 	</div>
 	<hr>

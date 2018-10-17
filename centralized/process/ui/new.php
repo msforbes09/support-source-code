@@ -1,7 +1,7 @@
 <form id="new-process-input">
 	<div class="row">
 		<div class="col-lg-4">
-			<label for="text-process">Department:</label>
+			<label for="select-dept">Department:</label>
 		</div>
 		<div class="col-lg-8">
 			<select id="select-dept" class="form-control" required>

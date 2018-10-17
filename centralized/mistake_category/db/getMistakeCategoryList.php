@@ -6,11 +6,11 @@ try {
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	$stmt = $pdo->prepare(
-		"SELECT c.categoryId, d.deptName, c.categoryDesc, c.categoryPoint
-		FROM plan_category c
+		"SELECT m.mistakeId, d.deptName, m.mistakeDesc, m.mistakePoint
+		FROM mistake_category m
 		JOIN department d
-		ON d.deptId = c.deptId
-		ORDER BY c.categoryId;"
+		ON d.deptId = m.deptId
+		ORDER BY m.mistakeId;"
 	);
 	$stmt->execute();
 	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
