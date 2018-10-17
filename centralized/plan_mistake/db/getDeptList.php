@@ -6,15 +6,15 @@ try {
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	$stmt = $pdo->prepare(
-		"SELECT p.procName AS procName, d.deptName AS deptName 
-		FROM process p
-		JOIN department d
-		ON d.deptId = p.deptId
-		ORDER BY p.procId;"
+		"SELECT * FROM department ORDER BY deptId;"
 	);
 	$stmt->execute();
-	$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	print json_encode($data);
+	$dept = '';
+	while( $data = $stmt->fetch(PDO::FETCH_ASSOC) ){
+			$dept .= '<option value="' . $data["deptId"] . '">' . $data["deptName"] . '</option>';
+		}
+
+	echo $dept;
 
 } catch ( PDOException $e ) {
 	echo $e->getMessage();

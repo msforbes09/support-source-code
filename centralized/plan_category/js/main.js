@@ -1,7 +1,7 @@
 const addPlanCategory = document.querySelector('#plan-category-add');
 const modalTitle = document.querySelector('.modal-title');
 const form = document.querySelector('.modal-body');
-// const processTable = document.querySelector('#process-table');
+const planCategoryTable = document.querySelector('#plan-category-table');
 
 //handle form events
 function formEvent(e){
@@ -30,7 +30,7 @@ function saveNewPlanCategory(){
 		url: 'db/saveNewPlanCategory.php',
 		success: (e) => {
 			$('.modal').modal('hide');
-			// getProcessList();
+			getPlanCategoryList()
 		},
 		error: (e) => alert(e.responseText),
 		data: {dept, categoryDesc, categoryPoint}
@@ -46,18 +46,19 @@ function showAddPlanCategoryForm(){
 function getPlanCategoryList(){
 	$.ajax({
 		type: "post",
-		url: 'db/getProcessList.php',
+		url: 'db/getPlanCategoryList.php',
 		dataType: "json",
 		error: (e) => alert(e.responseText),
 		success: (data) => {
-			const processList = data.map((list, index) => {
+			const planCategoryList = data.map((list, index) => {
 				return `<tr>
 					<td>${index + 1}</td>
 					<td>${list.deptName}</td>
-					<td>${list.procName}</td>
+					<td>${list.categoryDesc}</td>
+					<td>${list.categoryPoint}</td>
 				</tr>`;
 			}).join('');
-			processTable.innerHTML = processList;
+			planCategoryTable.innerHTML = planCategoryList;
 		}
 	})
 }
