@@ -15,13 +15,22 @@ function formEvent(e){
 }
 
 function saveNewDept(){
-	const dept = document.querySelector('#text-dept').value;
+	const dept = capitalizeWords(document.querySelector('#text-dept').value);
 	// set validation here
+	const regex = /[^a-z0-9\s]/gi ;
+	if (regex.test(dept)){
+		alert('Please use alphanumeric keys only!');
+		return;
+	}
 
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewDept.php',
 		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}
 			$('.modal').modal('hide');
 			getDeptList();
 		},
