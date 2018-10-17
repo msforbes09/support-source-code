@@ -17,7 +17,7 @@ function formEvent(e){
 function saveNewDept(){
 	const dept = capitalizeWords(document.querySelector('#text-dept').value);
 	// set validation here
-	const regex = /[^a-z0-9\s]/gi ;
+	const regex = /[^a-z0-9\s]/gi;
 	if (regex.test(dept)){
 		alert('Please use alphanumeric keys only!');
 		return;

@@ -17,13 +17,23 @@ function formEvent(e){
 
 function saveNewProcessEvent(){
 	const dept = document.querySelector('#select-dept').value;
-	const processEvent = document.querySelector('#text-process-event').value;
+	const processEvent = capitalizeWords(document.querySelector('#text-process-event').value);
 	// set validation here
+	const regex = /[^a-z\s]/gi;
+
+	if(regex.test(processEvent)){
+		alert('Please use letters only!');
+		return;
+	}
 
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewProcessEvent.php',
 		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}
 			$('.modal').modal('hide');
 			getProcessList();
 		},

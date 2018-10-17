@@ -21,18 +21,33 @@ function showAddForm(){
 }
 
 function saveNewStaff(){
-	const idNum = document.querySelector('#text-id').value;
-	const firstName = document.querySelector('#text-first-name').value;
-	const middleName = document.querySelector('#text-middle-name').value;
-	const lastName = document.querySelector('#text-last-name').value;
-	const nickName = document.querySelector('#text-nick-name').value;
+	const idNum = document.querySelector('#text-id').value.toUpperCase().trim();
+	const firstName = capitalizeWords(document.querySelector('#text-first-name').value);
+	const middleName = capitalizeWords(document.querySelector('#text-middle-name').value);
+	const lastName = capitalizeWords(document.querySelector('#text-last-name').value);
+	const nickName = capitalizeWords(document.querySelector('#text-nick-name').value);
 	const dept = document.querySelector('#select-dept').value;
 	// set validation here
+	// console.log(idNum, firstName, middleName, lastName, nickName)
+	const regexId = /^FIT\s[\d]{4}$/;
+	const regexName = /[^a-z\s]/gi;
+
+	if (regexName.test(firstName) || regexName.test(middleName) || regexName.test(lastName) || regexName.test(nickName)){
+		alert('Please use letters only for names!');
+		return;
+	} else if(!regexId.test(idNum)){
+		alert('Please check your id number! \n ex: FIT 0000');
+		return;
+	}
 
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewStaff.php',
-		success: () => {
+		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}s
 			$('.modal').modal('hide');
 			getStaffList();
 		},

@@ -17,13 +17,23 @@ function formEvent(e){
 
 function saveNewProcess(){
 	const dept = document.querySelector('#select-dept').value;
-	const process = document.querySelector('#text-process').value;
+	const process = capitalizeWords(document.querySelector('#text-process').value);
 	// set validation here
+	const regex = /[^a-z0-9\s]/gi;
+
+	if(regex.test(process)){
+		alert('Please use alphanumeric only!');
+		return;
+	}
 
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewProcess.php',
 		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}
 			$('.modal').modal('hide');
 			getProcessList();
 		},
