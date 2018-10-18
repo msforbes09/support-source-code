@@ -20,6 +20,14 @@
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
+			<label for="text-plan-category">Category Description:</label>
+		</div>
+		<div class="col-lg-8">
+			<input type="text" id="text-category-description" class="form-control" placeholder="ex: &quot;Basic EP & DP&quot;" required>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
 			<label for="text-category-point">Coefficient:</label>
 		</div>
 		<div class="col-lg-8">

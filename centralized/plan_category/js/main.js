@@ -19,21 +19,29 @@ function formEvent(e){
 
 function saveNewPlanCategory(){
 	const dept = document.querySelector('#select-dept').value;
-	const categoryDesc = document.querySelector('#text-plan-category').value;
+	const planCategory = capitalizeWords(document.querySelector('#text-plan-category').value);
+	const categoryDesc = capitalizeWords(document.querySelector('#text-category-description').value);
 	const categoryPoint = parseInt(document.querySelector('#text-category-point').value);
-	// console.log(dept, categoryDesc, categoryPoint);
 	// set validation here
+	const regex = /[^a-z0-9\s]/gi;
+	if (regex.test(planCategory) || regex.test(categoryDesc)){
+		alert('Please use alphanumeric keys only!');
+		return;
+	}
 
-	// return;
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewPlanCategory.php',
 		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}
 			$('.modal').modal('hide');
 			getPlanCategoryList()
 		},
 		error: (e) => alert(e.responseText),
-		data: {dept, categoryDesc, categoryPoint}
+		data: {dept, planCategory, categoryDesc, categoryPoint}
 	})
 }
 
@@ -54,6 +62,7 @@ function getPlanCategoryList(){
 				return `<tr>
 					<td>${index + 1}</td>
 					<td>${list.deptName}</td>
+					<td>${list.planCategory}</td>
 					<td>${list.categoryDesc}</td>
 					<td>${list.categoryPoint}</td>
 				</tr>`;

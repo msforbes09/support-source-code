@@ -1,3 +1,5 @@
+const loader = document.querySelector('.loading');
+
 function capitalizeWords(string){
 	const words = string.trim().split(' ')
 	const capitalized = words.map((list) => {

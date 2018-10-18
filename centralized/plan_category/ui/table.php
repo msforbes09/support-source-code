@@ -4,6 +4,7 @@
 			<th>No.</th>
 			<th>Department</th>
 			<th>Category</th>
+			<th>Description</th>
 			<th>Point</th>
 		</tr>
 	</thead>

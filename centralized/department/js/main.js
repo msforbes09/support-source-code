@@ -59,6 +59,7 @@ function getDeptList(){
 				</tr>`;
 			}).join('');
 			deptTable.innerHTML = deptList;
+			loader.classList.add('loaded');		
 		}
 	})
 }

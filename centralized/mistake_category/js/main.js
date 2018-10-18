@@ -19,17 +19,24 @@ function formEvent(e){
 
 function saveNewMistakeCategory(){
 	const dept = document.querySelector('#select-dept').value;
-	const mistakeCategory = document.querySelector('#text-mistake-category').value;
-	const mistakeDesc = document.querySelector('#text-mistake-description').value;
+	const mistakeCategory = capitalizeWords(document.querySelector('#text-mistake-category').value);
+	const mistakeDesc = capitalizeWords(document.querySelector('#text-mistake-description').value);
 	const mistakePoint = parseFloat(document.querySelector('#text-category-point').value);
-	// console.log(dept, mistakeDesc, mistakePoint);
 	// set validation here
+	const regex = /[^a-z0-9\s]/gi;
+	if (regex.test(mistakeCategory) || regex.test(mistakeDesc)){
+		alert('Please use alphanumeric keys only!');
+		return;
+	}
 
-	// return;
 	$.ajax({
 		type: "post",
 		url: 'db/saveNewMistakeCategory.php',
 		success: (e) => {
+			if(e) {
+				alert(e);
+				return;
+			}
 			$('.modal').modal('hide');
 			getMistakeCategoryList()
 		},

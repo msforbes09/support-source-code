@@ -6,7 +6,7 @@ try {
 	$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	$stmt = $pdo->prepare(
-		"SELECT c.categoryId, d.deptName, c.categoryDesc, c.categoryPoint
+		"SELECT c.categoryId, d.deptName, c.planCategory, c.categoryDesc, c.categoryPoint
 		FROM plan_category c
 		JOIN department d
 		ON d.deptId = c.deptId
