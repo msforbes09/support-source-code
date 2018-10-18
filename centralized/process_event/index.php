@@ -11,6 +11,7 @@
 </head>
 <body>
 	<?php
+		require_once '../tools/globalUi/loader.php';
 		require_once '../tools/globalUi/navbar.php';
 		require_once '../tools/globalUi/modal.php';
 	?>

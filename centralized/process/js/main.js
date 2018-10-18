@@ -1,6 +1,4 @@
 const addProcess = document.querySelector('#process-add');
-const modalTitle = document.querySelector('.modal-title');
-const form = document.querySelector('.modal-body');
 const processTable = document.querySelector('#process-table');
 
 //handle form events
@@ -25,48 +23,16 @@ function saveNewProcess(){
 		alert('Please use alphanumeric only!');
 		return;
 	}
-
-	$.ajax({
-		type: "post",
-		url: 'db/saveNewProcess.php',
-		success: (e) => {
-			if(e) {
-				alert(e);
-				return;
-			}
-			$('.modal').modal('hide');
-			getProcessList();
-		},
-		error: (e) => alert(e.responseText),
-		data: {dept, process}
-	})
+	processManager.add({dept, process});
 }
 
 function showAddProcessForm(){
+	$('.modal-title').text('New Process');
 	$('.modal-body').load('ui/new.php');
 	$('.modal').modal('show');
-	modalTitle.textContent = 'New Process';
 }
 
-function getProcessList(){
-	$.ajax({
-		type: "post",
-		url: 'db/getProcessList.php',
-		dataType: "json",
-		error: (e) => alert(e.responseText),
-		success: (data) => {
-			const processList = data.map((list, index) => {
-				return `<tr>
-					<td>${index + 1}</td>
-					<td>${list.deptName}</td>
-					<td>${list.procName}</td>
-				</tr>`;
-			}).join('');
-			processTable.innerHTML = processList;
-		}
-	})
-}
 
 addProcess.addEventListener('click', showAddProcessForm)
 form.addEventListener('submit', formEvent);
-document.addEventListener('DOMContentLoaded', getProcessList);
+document.addEventListener('DOMContentLoaded', processManager.load);

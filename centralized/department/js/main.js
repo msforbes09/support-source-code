@@ -1,6 +1,4 @@
 const addDept = document.querySelector('#dept-add');
-const modalTitle = document.querySelector('.modal-title');
-const form = document.querySelector('.modal-body');
 const deptTable = document.querySelector('#dept-table');
 
 //handle form events
@@ -22,48 +20,15 @@ function saveNewDept(){
 		alert('Please use alphanumeric keys only!');
 		return;
 	}
-
-	$.ajax({
-		type: "post",
-		url: 'db/saveNewDept.php',
-		success: (e) => {
-			if(e) {
-				alert(e);
-				return;
-			}
-			$('.modal').modal('hide');
-			getDeptList();
-		},
-		error: (e) => alert(e.responseText),
-		data: {dept}
-	})
+	departmentManager.add({dept});
 }
 
 function showAddDeptForm(){
+	$('.modal-title').text('New Department');
 	$('.modal-body').load('ui/new.php');
 	$('.modal').modal('show');
-	modalTitle.textContent = 'New Department';
-}
-
-function getDeptList(){
-	$.ajax({
-		type: "post",
-		url: 'db/getDeptList.php',
-		dataType: "json",
-		error: (e) => alert(e.responseText),
-		success: (data) => {
-			const deptList = data.map((list, index) => {
-				return `<tr>
-					<td>${index + 1}</td>
-					<td>${list.deptName}</td>
-				</tr>`;
-			}).join('');
-			deptTable.innerHTML = deptList;
-			loader.classList.add('loaded');		
-		}
-	})
 }
 
 addDept.addEventListener('click', showAddDeptForm)
 form.addEventListener('submit', formEvent);
-document.addEventListener('DOMContentLoaded', getDeptList);
+document.addEventListener('DOMContentLoaded', departmentManager.load());

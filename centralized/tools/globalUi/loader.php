@@ -1,3 +1,4 @@
+<!-- copied from https://codepen.io/jonitrythall/pen/ojKgdx/ -->
 <div class="loading">
 <div class="loader">
   <div class="gear one">
@@ -22,6 +23,6 @@
     </filter>
     <circle cx="70" cy="70" r="66" fill="transparent" stroke="white" stroke-width="40" filter="url(#blur)"></circle>
   </svg>
-<div class="loading-text">loading</div>
+<div class="loading-text">loading...</div>
 </div>
 </div>
