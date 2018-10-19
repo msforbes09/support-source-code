@@ -136,6 +136,6 @@ select:invalid { color: #999999; }
 @keyframes waiting{
   0% { transform: scale(0) }
   100% {
-    transform: scale(1);
+    transform: scale(1);  
   }
 }
