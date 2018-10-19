@@ -28,9 +28,12 @@ function saveNewPlanCategory(){
 }
 
 function showAddPlanCategoryForm(){
+	if (button.check(this)) return;	
 	$('.modal-title').text('New Plan Category');
-	$('.modal-body').load('ui/new.php');
-	$('.modal').modal('show');
+	$('.modal-body').load('ui/new.php', () => {
+		$('.modal').modal('show');
+		button.done(this);
+	});
 }
 
 addPlanCategory.addEventListener('click', showAddPlanCategoryForm)

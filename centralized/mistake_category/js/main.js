@@ -4,8 +4,8 @@ const mistakeCategoryTable = document.querySelector('#mistake-category-table');
 //handle form events
 function formEvent(e){
 	e.preventDefault();
+	
 	const formId = e.target.getAttribute('id');
-
 	switch(formId){
 		case 'new-mistake-category-input':
 			saveNewMistakeCategory();
@@ -28,9 +28,12 @@ function saveNewMistakeCategory(){
 }
 
 function showAddMistakeCategoryForm(){
+	if (button.check(this)) return;	
 	$('.modal-title').text('New Mistake Category');
-	$('.modal-body').load('ui/new.php');
-	$('.modal').modal('show');
+	$('.modal-body').load('ui/new.php', () => {
+		$('.modal').modal('show');
+		button.done(this);
+	});
 }
 
 addMistakeCategory.addEventListener('click', showAddMistakeCategoryForm)

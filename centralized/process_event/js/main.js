@@ -27,9 +27,12 @@ function saveNewProcessEvent(){
 }
 
 function showAddProcessEventForm(){
+	if (button.check(this)) return;	
 	$('.modal-title').text('New Process Event');
-	$('.modal-body').load('ui/new.php');
-	$('.modal').modal('show');
+	$('.modal-body').load('ui/new.php', () => {
+		$('.modal').modal('show');
+		button.done(this);
+	});
 }
 
 addProcessEvent.addEventListener('click', showAddProcessEventForm)

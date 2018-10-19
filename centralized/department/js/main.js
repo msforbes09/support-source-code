@@ -4,15 +4,16 @@ const deptTable = document.querySelector('#dept-table');
 //handle form events
 function formEvent(e){
 	e.preventDefault();
+
 	const formId = e.target.getAttribute('id');
 	switch(formId){
 		case 'new-dept-input':
-		saveNewDept();
+			saveNewDept();
 			break;
 	}
 }
 
-function saveNewDept(){
+function saveNewDept(e){
 	const dept = capitalizeWords(document.querySelector('#text-dept').value);
 	// set validation here
 	const regex = /[^a-z0-9\s]/gi;
@@ -25,7 +26,6 @@ function saveNewDept(){
 
 function showAddDeptForm(){
 	if (button.check(this)) return;	
-
 	$('.modal-title').text('New Department');
 	$('.modal-body').load('ui/new.php', () => {
 		$('.modal').modal('show');

@@ -27,7 +27,7 @@ select:invalid { color: #999999; }
  	display: flex;
  	justify-content: center;
  	align-items: center;
- 	background-color: rgba(255, 255, 255, 0.8);
+ 	background-color: rgba(255, 255, 255, 0.95);
 }
 .loaded{
 	display: none;
@@ -119,6 +119,7 @@ select:invalid { color: #999999; }
   background-color: transparent;
   color: transparent;
   pointer-events:none;
+  outline: none;
 }
 .clicked:after{
   content: '';

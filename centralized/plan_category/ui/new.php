@@ -37,7 +37,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-lg-6">
-			<input type="submit" class="btn btn-success btn-block" value="Save">
+			<button type="submit" class="btn btn-success btn-block">Save</button>
 		</div>
 		<div class="col-lg-6">
 			<input type="button" class="btn btn-default btn-block" data-dismiss="modal" value="Close">

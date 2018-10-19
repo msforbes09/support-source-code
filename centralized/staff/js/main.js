@@ -13,9 +13,12 @@ function formEvent(e){
 }
 
 function showAddForm(){
+	if (button.check(this)) return;	
 	$('.modal-title').text('New Staff');
-	$('.modal-body').load('ui/new.php');
-	$('.modal').modal('show');
+	$('.modal-body').load('ui/new.php', () => {
+		$('.modal').modal('show');
+		button.done(this);
+	});
 }
 
 function saveNewStaff(){
