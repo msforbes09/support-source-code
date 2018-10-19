@@ -24,9 +24,13 @@ function saveNewDept(){
 }
 
 function showAddDeptForm(){
+	if (button.check(this)) return;	
+
 	$('.modal-title').text('New Department');
-	$('.modal-body').load('ui/new.php');
-	$('.modal').modal('show');
+	$('.modal-body').load('ui/new.php', () => {
+		$('.modal').modal('show');
+		button.done(this);
+	});
 }
 
 addDept.addEventListener('click', showAddDeptForm)

@@ -7,6 +7,20 @@ const loader = {
 	show : () => loader.image.classList.remove('loaded'),
 	hide : () => setTimeout(() => loader.image.classList.add('loaded'), 200)
 }
+// button 
+const button = {
+	wait : trigger => {
+		const color = getComputedStyle(trigger).backgroundColor;
+		document.documentElement.style.setProperty('--waiting', color);
+		trigger.classList.add('clicked');
+	},
+	done : trigger => {
+		trigger.classList.remove('clicked');
+	},
+	check : trigger => {
+		return trigger.classList.contains('clicked') ? true : button.wait(trigger);
+	}
+}
 
 const capitalizeWords = (string) => {
 	const words = string.trim().split(' ')
