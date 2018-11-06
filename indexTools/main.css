@@ -133,7 +133,7 @@ main .note{
     position: absolute;
     right: 120px;
     top: 40px;
-    width: 400px;
+    width: 450px;
     background: #ffffcc; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #ffffcc 81%, #ffffcc 82%, #ffffcc 82%, #ffffee 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffffcc), color-stop(82%,#ffffcc), color-stop(82%,#ffffcc), color-stop(100%,#ffffee)); /* Chrome,Safari4+ */
