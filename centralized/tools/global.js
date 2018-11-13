@@ -82,7 +82,6 @@ const staffManager = {
 			}
 		})
 	}
-
 }
 // process manager object
 const processManager = {
