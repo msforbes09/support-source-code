@@ -1,0 +1,9 @@
+.staffsTableItem{
+	cursor: pointer;
+}
+#staffDetailTable tr td:nth-child(2){
+	color: blue;
+}
+#staffDetailTable tr td:first-child{
+	font-weight: bold;
+}
