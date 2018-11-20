@@ -1,0 +1,14 @@
+body{
+	background-color: #ffffef; 
+}
+
+.panel{
+	width: 400px;
+	min-width: 400px;
+	display: block;
+	margin: auto;
+	margin-top: 30vh;	
+}
+button{
+	margin-top: 10px;
+}	
