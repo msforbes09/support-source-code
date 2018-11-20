@@ -1,0 +1,315 @@
+/*@import url('https://fonts.googleapis.com/css?family=Architects Daughter');*/
+@import url('https://fonts.googleapis.com/css?family=Emilys Candy');
+@import url('https://fonts.googleapis.com/css?family=Creepster');
+@import url('https://fonts.googleapis.com/css?family=Denk One');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+html{ scroll-behavior: smooth }
+body{
+    font-family: 'Emilys Candy';
+    font-size: 20px;
+}
+:root { --image: url('../image/horror-house.jpg') }
+.layer2{ z-index: -2 }
+.layer1{ z-index: -1 }
+.layer0{ z-index: 0 }
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.filter{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(transparent, black);
+}
+/*header*/
+.header{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    color: transparent;
+}
+.header .title{
+    font-family: 'Denk One';
+    font-size: 4em;
+    letter-spacing: 10px;
+    position: relative;
+    padding: 0 0 15px 50px;
+    animation: horror-animation 5s infinite;
+}
+.header .sub-title{
+    font-family: 'Creepster';
+    letter-spacing: 5px;
+    padding: 0 0 25px 50px;
+    font-size: 1.8em;
+    color: rgba(255, 0, 0, 0.5);
+}
+.header .button{
+    padding: 0 0 100px 50px;
+}
+
+@keyframes horror-animation {
+    0% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.1); left: 15px; transform: translateY(10px);}
+    5% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: 0; transform: translateY(-10px);}
+    10% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); left: -15px; transform: translateY(-10px);}
+    15% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0; transform: translateY(10px);}
+    16% {text-shadow: 0 0 5px #212121; left: 0}
+    17% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0;}
+    20% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: -15px}
+    25% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: -15px}
+    30% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.7); left: 0}
+    35% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 0}
+    36% {text-shadow: 0 0 5px #212121; left: 0}
+    37% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 0}
+    40% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.9); left: 15px}
+    45% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); left: 15px}
+    50% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); left: 15px}
+    55% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 0}
+    56% {text-shadow: 0 0 5px #212121; left: 0}
+    57% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.6); left: 30px}
+    60% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: 0}
+    65% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 0}
+    70% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.3); left: -15px}
+    75% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: -15px}
+    76% {text-shadow: 0 0 5px #212121; left: 0}
+    77% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.2); left: -15px}
+    80% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.1); left: -15px}
+    85% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); left: 15px}
+    86% {text-shadow: 0 0 5px #212121; left: 0}
+    87% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); left: 15px}
+    90% {text-shadow: 0 0 5px rgba(255, 0, 0, 0.3); left: 15px}
+    95% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.4); left: 15px} 
+    100% {text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); left: 0} 
+}
+
+#start{
+    font-family: 'Creepster';
+    font-size: 1.6em;
+    padding: 10px 50px 10px 50px;
+    border: 1px solid #ff0000;
+    text-shadow: 1px 1px white;
+    background-color: transparent;
+    color: #ff0000;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 5px;
+    transition: all 2s linear;
+}
+#start:hover{
+    color: #000000;
+    background-color: #ff0000; 
+}
+/*navigation bar*/
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4em; 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+.nav [data-target]{
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.8s linear;
+    color: red;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+}
+.nav [data-target]:hover{
+    transform: scale(1.1);
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    opacity: 1;
+}
+/*blank screen*/
+.blank{ height: 100vh; width: 100%; }
+/*main content*/
+main{
+    position: relative;
+    letter-spacing: 3px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0 25px 0;
+}
+section:nth-child(even){ background-color: rgba(255, 255, 255, 0.3); }
+section:nth-child(odd){ background-color: rgba(0, 0, 0, 0.3); }
+section:nth-child(even) *{ color: #000000;}
+section:nth-child(odd) *{ color: #ffffff; }
+section a{ text-decoration: none; text-shadow: 1px 1px red; }
+section:nth-child(even) a:hover{ text-shadow: 1px 1px #000000;}
+section:nth-child(odd) a:hover{ text-shadow: 0.5px 0.5px #ffffff; }
+section a:hover{
+    transform: scale(1.1);
+    transition: all 0.8s linear;
+    color: #ff0000;
+}
+main .content{
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+}
+main .title{
+    font-size: 1.6em;
+    line-height: 80px;
+    color: red;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px #ffffff;
+    padding: 0 80px 0 50px;
+}
+main .note{
+    font-size: 0.8em;
+    line-height: 60px;
+    font-style: italic;
+}
+/*post it*/
+.post-it{
+    position: absolute;
+    right: 120px;
+    top: 40px;
+    width: 400px;
+    z-index: 2;
+    background: #eeeedd; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #eeeedd 81%, #eeeedd 82%, #eeeedd 82%, #ffffee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#eeeedd), color-stop(82%,#eeeedd), color-stop(82%,#eeeedd), color-stop(100%,#ffffee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* IE10+ */
+    background: linear-gradient(135deg, #eeeedd 81%,#eeeedd 82%,#eeeedd 82%,#ffffee 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeedd', endColorstr='#ffffee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /*border:1px solid #E8E8E8;*/
+    border-bottom-right-radius: 100px 10px;
+    box-shadow: 2px 2px 5px 0 #444444;
+    padding: 50px 0 10px 0;
+    transform: rotate(1deg);
+    transform-origin: 0%;
+    display: none; 
+}
+.tape{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)), color-stop(0.3, rgba(0, 0, 0, 0.4)));
+    background: -moz-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -ms-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    border-left: dashed 1px rgba(0, 0, 0, 0.3);
+    border-right: dashed 1px rgba(0, 0, 0, 0.3);
+    width: 175px;
+    height: 45px;
+    position: absolute;
+    top: 0;
+}
+.tape{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.3);
+    background: -webkit-gradient(linear, 555% 20%, 0% 92%, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)), color-stop(0.3, rgba(0, 0, 0, 0.4)));
+    background: -moz-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -ms-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: -o-linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    background: linear-gradient(555% 0 180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0));
+    border-left: dashed 1px rgba(0, 0, 0, 0.3);
+    border-right: dashed 1px rgba(0, 0, 0, 0.3);
+    width: 175px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+}
+.tape1{
+    left: 110px;
+    top: -20px;
+}
+.tape2{
+    transform: rotate(126deg);
+    left: -75px;
+    display: none;
+}
+.post-it p{
+    font-family:'Architects Daughter';
+    font-size:22px;
+    min-height: 32px;
+    padding: 0 30px 0 30px;
+    color: #ff2200;
+}
+.post-it p:after{
+    content: "";
+    background-color: #eee0ff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(24px);
+    z-index: -1;
+}
+.note-link{
+    cursor: pointer;
+    color: #ff2200;
+    font-weight: bold;
+}
+/*additional design*/
+.image{
+    background-image: url(../image/ghost.png);
+    background-repeat: no-repeat;
+    background-size: auto 300px;
+    position: fixed;
+    right: 60px; bottom: 50px;
+    width: 150px;
+    height: 300px;
+    /*animation: ghost-animation 15s infinite;*/
+}
+.ghostShow{
+    z-index: 3;
+}
+.ghostBlink{
+    display: none;
+}
+/*@keyframes ghost-animation {
+    69% {z-index: 0; transform: scale(1);}
+    70% {z-index: 2; transform: scale(3);}
+    85% {z-index: 2; transform: scale(3);}
+}*/
+.web{
+    position: fixed;
+    display: block;
+}
+.web1{
+    top: -100px;
+    right: -100px;
+}
+.web2{
+    bottom: -50px;
+    left: 80%;
+}
+.web3{
+    top: -50px;
+    left: -50px;
+}
+.web4{
+    bottom: 250px;
+    left: 400px;
+}
