@@ -69,7 +69,7 @@ function onEdit(e) {
           cell.setValue("");
         }
       }
-      cell.setNumberFormat("mm/dd/yyyy");  
+      cell.setNumberFormat("mm/dd");  
       break;
     case 9:
       ui.alert("You are not allowed to modify this Range.");
