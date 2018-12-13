@@ -9,7 +9,7 @@ function isDate(v) {
     return false;
   }
 }
-function onaEdit(e) {
+function onEdit(e) {
   var ui = SpreadsheetApp.getUi();
   var sh = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var row = sh.getActiveCell().getRowIndex();
@@ -20,13 +20,9 @@ function onaEdit(e) {
   var sheet = sh.getSheetName();
 
   switch(sheet){
-  case "Revision": 
-  case "Basic": 
-//    if(row <=2){
-//      ui.alert("You are not allowed to modify this Range.");
-//      cell.setValue(e.oldValue);
-//      return;
-//    }
+  case "Structural": 
+  case "Foundation": 
+  case "Checking": 
 
     switch(col){
     case 9:
