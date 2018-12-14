@@ -22,7 +22,7 @@ function onEdit(e) {
   switch(sheet){
   case "Structural": 
   case "Foundation": 
-  case "Checking": 
+  case "Precut Check": 
 
     switch(col){
     case 9:
