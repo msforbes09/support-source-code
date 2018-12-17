@@ -25,32 +25,32 @@ function onEdit(e) {
   case "Precut Check": 
 
     switch(col){
-    case 9:
-    case 15:
-    case 21:
-    case 27:
-    case 33:
-    case 39:
-    case 45:
+    case 10:
+    case 16:
+    case 22:
+    case 28:
+    case 34:
+    case 40:
+    case 46:
       if(value){
         //ui.alert(process)
-        sh.getRange(row,7).setValue(process);
+        sh.getRange(row,8).setValue(process);
       }
       break;
-    case 10:
     case 11:
-    case 16:
+    case 12:
     case 17:
-    case 22:
+    case 18:
     case 23:
-    case 28:
+    case 24:
     case 29:
-    case 34:
+    case 30:
     case 35:
-    case 40:
+    case 36:
     case 41:
-    case 46:
+    case 42:
     case 47:
+    case 48:
       if (!isDate(value) && value){
         ui.alert("Data is not a valid value.");
         if(e.oldValue){
@@ -73,7 +73,7 @@ function onEdit(e) {
       }
       cell.setNumberFormat("mm/dd/yyyy");  
       break;
-    case 7:
+    case 8:
       ui.alert("You are not allowed to modify this Range.");
       if(e.oldValue){
         cell.setValue(e.oldValue);
